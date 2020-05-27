@@ -30,11 +30,11 @@
         {
             this.panelIcons = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.picBoxGift = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picBoxDonor = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -47,9 +47,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelIcons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,11 +61,11 @@
             // panelIcons
             // 
             this.panelIcons.Controls.Add(this.label21);
-            this.panelIcons.Controls.Add(this.pictureBox6);
+            this.panelIcons.Controls.Add(this.picBoxVolunteer);
             this.panelIcons.Controls.Add(this.label20);
-            this.panelIcons.Controls.Add(this.pictureBox5);
+            this.panelIcons.Controls.Add(this.picBoxGift);
             this.panelIcons.Controls.Add(this.label19);
-            this.panelIcons.Controls.Add(this.pictureBox4);
+            this.panelIcons.Controls.Add(this.picBoxDonor);
             this.panelIcons.Controls.Add(this.label18);
             this.panelIcons.Controls.Add(this.pictureBox3);
             this.panelIcons.Controls.Add(this.label17);
@@ -86,16 +86,17 @@
             this.label21.TabIndex = 23;
             this.label21.Text = "Volunteers";
             // 
-            // pictureBox6
+            // picBoxVolunteer
             // 
-            this.pictureBox6.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Location = new System.Drawing.Point(286, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox6.TabIndex = 22;
-            this.pictureBox6.TabStop = false;
+            this.picBoxVolunteer.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
+            this.picBoxVolunteer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxVolunteer.Location = new System.Drawing.Point(286, 2);
+            this.picBoxVolunteer.Name = "picBoxVolunteer";
+            this.picBoxVolunteer.Size = new System.Drawing.Size(37, 38);
+            this.picBoxVolunteer.TabIndex = 22;
+            this.picBoxVolunteer.TabStop = false;
+            this.picBoxVolunteer.Click += new System.EventHandler(this.picBoxVolunteer_Click);
             // 
             // label20
             // 
@@ -108,16 +109,16 @@
             this.label20.TabIndex = 21;
             this.label20.Text = "Gifts";
             // 
-            // pictureBox5
+            // picBoxGift
             // 
-            this.pictureBox5.BackgroundImage = global::Splash.Properties.Resources.gifticongray;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(227, 1);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
+            this.picBoxGift.BackgroundImage = global::Splash.Properties.Resources.gifticongray;
+            this.picBoxGift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxGift.Cursor = System.Windows.Forms.Cursors.No;
+            this.picBoxGift.Location = new System.Drawing.Point(227, 1);
+            this.picBoxGift.Name = "picBoxGift";
+            this.picBoxGift.Size = new System.Drawing.Size(37, 38);
+            this.picBoxGift.TabIndex = 20;
+            this.picBoxGift.TabStop = false;
             // 
             // label19
             // 
@@ -130,15 +131,16 @@
             this.label19.TabIndex = 19;
             this.label19.Text = "Donors";
             // 
-            // pictureBox4
+            // picBoxDonor
             // 
-            this.pictureBox4.BackgroundImage = global::Splash.Properties.Resources.donoricon;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(166, 1);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
+            this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
+            this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
+            this.picBoxDonor.Name = "picBoxDonor";
+            this.picBoxDonor.Size = new System.Drawing.Size(37, 38);
+            this.picBoxDonor.TabIndex = 18;
+            this.picBoxDonor.TabStop = false;
+            this.picBoxDonor.Click += new System.EventHandler(this.picBoxDonor_Click);
             // 
             // label18
             // 
@@ -184,6 +186,7 @@
             this.picBoxHome.Size = new System.Drawing.Size(37, 38);
             this.picBoxHome.TabIndex = 14;
             this.picBoxHome.TabStop = false;
+            this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
             // 
             // panel1
             // 
@@ -274,9 +277,9 @@
             this.Text = "Gift";
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -293,11 +296,11 @@
 
         private System.Windows.Forms.Panel panelIcons;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox picBoxVolunteer;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox picBoxGift;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picBoxDonor;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label17;

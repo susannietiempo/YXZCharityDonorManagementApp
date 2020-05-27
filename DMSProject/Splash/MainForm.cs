@@ -44,5 +44,61 @@ namespace Splash
         {
 
         }
+
+        private void picBoxHome_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+           
+        }
+
+        private void picBoxDonors_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Donor donor = new Donor(this);
+                donor.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+         
+        }
+
+        private void picBoxVolunteers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Volunteers volunteers = new Volunteers(this);
+                volunteers.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+
+        }
+
+        private void picBoxGifts_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Gift gift = new Gift(this);
+                gift.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+
+        }
     }
 }
