@@ -428,7 +428,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(51, 59);
+            this.txtSearch.Location = new System.Drawing.Point(53, 59);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(176, 21);
             this.txtSearch.TabIndex = 3;
@@ -558,18 +558,18 @@
             // 
             this.picBoxHome.BackgroundImage = global::Splash.Properties.Resources.homeicon37;
             this.picBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxHome.Cursor = System.Windows.Forms.Cursors.No;
             this.picBoxHome.Location = new System.Drawing.Point(39, 0);
             this.picBoxHome.Name = "picBoxHome";
             this.picBoxHome.Size = new System.Drawing.Size(37, 38);
             this.picBoxHome.TabIndex = 14;
             this.picBoxHome.TabStop = false;
-            this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
             // 
             // picBoxSearch
             // 
             this.picBoxSearch.BackgroundImage = global::Splash.Properties.Resources.source;
             this.picBoxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxSearch.Location = new System.Drawing.Point(15, 51);
             this.picBoxSearch.Name = "picBoxSearch";
             this.picBoxSearch.Size = new System.Drawing.Size(30, 31);

@@ -45,19 +45,6 @@ namespace Splash
 
         }
 
-        private void picBoxHome_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-           
-        }
 
         private void picBoxDonors_Click(object sender, EventArgs e)
         {
