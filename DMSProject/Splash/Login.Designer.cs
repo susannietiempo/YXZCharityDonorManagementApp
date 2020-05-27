@@ -41,15 +41,15 @@
             // txtUserName
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUserName.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtUserName.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.txtUserName.Location = new System.Drawing.Point(187, 172);
             this.txtUserName.MinimumSize = new System.Drawing.Size(202, 38);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(271, 38);
+            this.txtUserName.Size = new System.Drawing.Size(271, 27);
             this.txtUserName.TabIndex = 2;
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtUserName.UseWaitCursor = true;
             this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
             // 
             // pictureBox1
@@ -91,12 +91,13 @@
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.txtPassword.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.txtPassword.Location = new System.Drawing.Point(187, 216);
             this.txtPassword.MinimumSize = new System.Drawing.Size(202, 38);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(271, 38);
+            this.txtPassword.Size = new System.Drawing.Size(271, 27);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseWaitCursor = true;
@@ -106,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(668, 434);
             this.Controls.Add(this.txtPassword);

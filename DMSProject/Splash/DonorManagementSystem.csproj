@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -161,6 +162,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logingreen58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalllogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petonly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peopleicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gifticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volunteericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\source.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeicon37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plusicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donoricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gifticongray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volunteericongray.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
