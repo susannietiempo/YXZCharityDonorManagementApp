@@ -135,7 +135,6 @@
             // 
             this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
             this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxDonor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
             this.picBoxDonor.Name = "picBoxDonor";
             this.picBoxDonor.Size = new System.Drawing.Size(37, 38);
@@ -275,7 +274,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "Gift";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gift";
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();

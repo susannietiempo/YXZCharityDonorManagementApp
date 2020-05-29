@@ -211,7 +211,6 @@
             // 
             this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
             this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxDonor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
             this.picBoxDonor.Name = "picBoxDonor";
             this.picBoxDonor.Size = new System.Drawing.Size(37, 38);

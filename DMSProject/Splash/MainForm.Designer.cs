@@ -35,24 +35,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lblRecentGifts = new System.Windows.Forms.ListBox();
+            this.lsvRecentGifts = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblTtlHours = new System.Windows.Forms.Label();
+            this.lblTtlVolunteers = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTtlGiftAmt = new System.Windows.Forms.Label();
+            this.lblTtlNoGift = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.picBoxGiftIcon = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblAvgGift = new System.Windows.Forms.Label();
+            this.lblTtlDonor = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.picBoxDonorIcon = new System.Windows.Forms.PictureBox();
@@ -113,6 +116,7 @@
             this.labelLogout.Size = new System.Drawing.Size(47, 14);
             this.labelLogout.TabIndex = 4;
             this.labelLogout.Text = "LogOut";
+            this.labelLogout.Click += new System.EventHandler(this.labelLogout_Click);
             // 
             // pictureBox1
             // 
@@ -158,12 +162,11 @@
             this.panel2.Size = new System.Drawing.Size(1129, 592);
             this.panel2.TabIndex = 1;
             this.panel2.TabStop = true;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.lblRecentGifts);
+            this.panel6.Controls.Add(this.lsvRecentGifts);
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.label15);
             this.panel6.Location = new System.Drawing.Point(261, 335);
@@ -171,14 +174,34 @@
             this.panel6.Size = new System.Drawing.Size(564, 229);
             this.panel6.TabIndex = 4;
             // 
-            // lblRecentGifts
+            // lsvRecentGifts
             // 
-            this.lblRecentGifts.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecentGifts.FormattingEnabled = true;
-            this.lblRecentGifts.Location = new System.Drawing.Point(35, 72);
-            this.lblRecentGifts.Name = "lblRecentGifts";
-            this.lblRecentGifts.Size = new System.Drawing.Size(444, 134);
-            this.lblRecentGifts.TabIndex = 4;
+            this.lsvRecentGifts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lsvRecentGifts.HideSelection = false;
+            this.lsvRecentGifts.Location = new System.Drawing.Point(36, 56);
+            this.lsvRecentGifts.Name = "lsvRecentGifts";
+            this.lsvRecentGifts.Size = new System.Drawing.Size(490, 157);
+            this.lsvRecentGifts.TabIndex = 4;
+            this.lsvRecentGifts.UseCompatibleStateImageBehavior = false;
+            this.lsvRecentGifts.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Donor Name";
+            this.columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Gift Date";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Gift Amount";
+            this.columnHeader3.Width = 120;
             // 
             // label16
             // 
@@ -204,8 +227,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(111)))), ((int)(((byte)(89)))));
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.lblTtlHours);
+            this.panel5.Controls.Add(this.lblTtlVolunteers);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.pictureBox2);
@@ -214,31 +237,31 @@
             this.panel5.Size = new System.Drawing.Size(253, 164);
             this.panel5.TabIndex = 3;
             // 
-            // label11
+            // lblTtlHours
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(157, 123);
-            this.label11.MinimumSize = new System.Drawing.Size(86, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 33);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "100";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlHours.AutoSize = true;
+            this.lblTtlHours.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTtlHours.ForeColor = System.Drawing.Color.White;
+            this.lblTtlHours.Location = new System.Drawing.Point(157, 123);
+            this.lblTtlHours.MinimumSize = new System.Drawing.Size(86, 33);
+            this.lblTtlHours.Name = "lblTtlHours";
+            this.lblTtlHours.Size = new System.Drawing.Size(86, 33);
+            this.lblTtlHours.TabIndex = 12;
+            this.lblTtlHours.Text = "100";
+            this.lblTtlHours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // lblTtlVolunteers
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(173, 59);
-            this.label12.MinimumSize = new System.Drawing.Size(60, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 33);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "30";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlVolunteers.AutoSize = true;
+            this.lblTtlVolunteers.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTtlVolunteers.ForeColor = System.Drawing.Color.White;
+            this.lblTtlVolunteers.Location = new System.Drawing.Point(173, 59);
+            this.lblTtlVolunteers.MinimumSize = new System.Drawing.Size(60, 33);
+            this.lblTtlVolunteers.Name = "lblTtlVolunteers";
+            this.lblTtlVolunteers.Size = new System.Drawing.Size(60, 33);
+            this.lblTtlVolunteers.TabIndex = 11;
+            this.lblTtlVolunteers.Text = "30";
+            this.lblTtlVolunteers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -275,8 +298,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(64)))), ((int)(((byte)(145)))));
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.lblTtlGiftAmt);
+            this.panel4.Controls.Add(this.lblTtlNoGift);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.picBoxGiftIcon);
@@ -285,31 +308,31 @@
             this.panel4.Size = new System.Drawing.Size(253, 164);
             this.panel4.TabIndex = 2;
             // 
-            // label7
+            // lblTtlGiftAmt
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(146, 122);
-            this.label7.MinimumSize = new System.Drawing.Size(86, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 33);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "$100.00";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlGiftAmt.AutoSize = true;
+            this.lblTtlGiftAmt.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTtlGiftAmt.ForeColor = System.Drawing.Color.White;
+            this.lblTtlGiftAmt.Location = new System.Drawing.Point(146, 122);
+            this.lblTtlGiftAmt.MinimumSize = new System.Drawing.Size(86, 33);
+            this.lblTtlGiftAmt.Name = "lblTtlGiftAmt";
+            this.lblTtlGiftAmt.Size = new System.Drawing.Size(86, 33);
+            this.lblTtlGiftAmt.TabIndex = 8;
+            this.lblTtlGiftAmt.Text = "$100.00";
+            this.lblTtlGiftAmt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // lblTtlNoGift
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(162, 58);
-            this.label8.MinimumSize = new System.Drawing.Size(60, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 33);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "30";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlNoGift.AutoSize = true;
+            this.lblTtlNoGift.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTtlNoGift.ForeColor = System.Drawing.Color.White;
+            this.lblTtlNoGift.Location = new System.Drawing.Point(162, 58);
+            this.lblTtlNoGift.MinimumSize = new System.Drawing.Size(60, 33);
+            this.lblTtlNoGift.Name = "lblTtlNoGift";
+            this.lblTtlNoGift.Size = new System.Drawing.Size(60, 33);
+            this.lblTtlNoGift.TabIndex = 7;
+            this.lblTtlNoGift.Text = "30";
+            this.lblTtlNoGift.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -346,8 +369,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lblAvgGift);
+            this.panel3.Controls.Add(this.lblTtlDonor);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.picBoxDonorIcon);
@@ -356,31 +379,31 @@
             this.panel3.Size = new System.Drawing.Size(253, 164);
             this.panel3.TabIndex = 1;
             // 
-            // label6
+            // lblAvgGift
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(142, 121);
-            this.label6.MinimumSize = new System.Drawing.Size(86, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 33);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "$100.00";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAvgGift.AutoSize = true;
+            this.lblAvgGift.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvgGift.ForeColor = System.Drawing.Color.White;
+            this.lblAvgGift.Location = new System.Drawing.Point(142, 121);
+            this.lblAvgGift.MinimumSize = new System.Drawing.Size(86, 33);
+            this.lblAvgGift.Name = "lblAvgGift";
+            this.lblAvgGift.Size = new System.Drawing.Size(86, 33);
+            this.lblAvgGift.TabIndex = 4;
+            this.lblAvgGift.Text = "$100.00";
+            this.lblAvgGift.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblTtlDonor
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(158, 58);
-            this.label5.MinimumSize = new System.Drawing.Size(60, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 33);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "30";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlDonor.AutoSize = true;
+            this.lblTtlDonor.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTtlDonor.ForeColor = System.Drawing.Color.White;
+            this.lblTtlDonor.Location = new System.Drawing.Point(158, 58);
+            this.lblTtlDonor.MinimumSize = new System.Drawing.Size(60, 33);
+            this.lblTtlDonor.Name = "lblTtlDonor";
+            this.lblTtlDonor.Size = new System.Drawing.Size(60, 33);
+            this.lblTtlDonor.TabIndex = 3;
+            this.lblTtlDonor.Text = "30";
+            this.lblTtlDonor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -428,7 +451,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(53, 59);
+            this.txtSearch.Location = new System.Drawing.Point(51, 59);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(176, 21);
             this.txtSearch.TabIndex = 3;
@@ -564,12 +587,12 @@
             this.picBoxHome.Size = new System.Drawing.Size(37, 38);
             this.picBoxHome.TabIndex = 14;
             this.picBoxHome.TabStop = false;
+            this.picBoxHome.Click += new System.EventHandler(this.picBoxHome_Click);
             // 
             // picBoxSearch
             // 
             this.picBoxSearch.BackgroundImage = global::Splash.Properties.Resources.source;
             this.picBoxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxSearch.Location = new System.Drawing.Point(15, 51);
             this.picBoxSearch.Name = "picBoxSearch";
             this.picBoxSearch.Size = new System.Drawing.Size(30, 31);
@@ -636,20 +659,19 @@
         private System.Windows.Forms.PictureBox picBoxDonorIcon;
         private System.Windows.Forms.PictureBox picBoxGiftIcon;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblTtlHours;
+        private System.Windows.Forms.Label lblTtlVolunteers;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTtlGiftAmt;
+        private System.Windows.Forms.Label lblTtlNoGift;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblAvgGift;
+        private System.Windows.Forms.Label lblTtlDonor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ListBox lblRecentGifts;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtSearch;
@@ -665,6 +687,10 @@
         private System.Windows.Forms.PictureBox picBoxAdd;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox picBoxHome;
+        private System.Windows.Forms.ListView lsvRecentGifts;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
 
