@@ -25,46 +25,12 @@ namespace Splash
             myParent = p;
         }
 
-        private void picBoxHome_Click(object sender, EventArgs e)
+        private void ShowNewForm(object sender, EventArgs e)
         {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
+            Control control = (Control)sender;
 
+            Display.ShowChildForm(control, myParent, this);
         }
 
-        private void picBoxGift_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Gift gift = new Gift();
-                gift.Show();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-
-        }
-
-        private void picBoxDonor_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Donor donor = new Donor();
-                donor.Show();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
     }
 }

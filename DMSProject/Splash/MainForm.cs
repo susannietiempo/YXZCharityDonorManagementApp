@@ -12,10 +12,12 @@ namespace Splash
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
         }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -39,29 +41,9 @@ namespace Splash
                     this.Close();
                 }
 
-                //get data for the overview
-                lblTtlDonor.Text = DataAccess.GetValue("SELECT COUNT(AccountId) FROM Account").ToString();
-                lblAvgGift.Text = Convert.ToDecimal(DataAccess.GetValue("SELECT AVG(ReceivedAmount) FROM Gift")).ToString("c");
-                lblTtlGiftAmt.Text = Convert.ToDecimal(DataAccess.GetValue("SELECT SUM(ReceivedAmount) FROM Gift")).ToString("c");
-                lblTtlNoGift.Text = DataAccess.GetValue("SELECT COUNT(ReceivedAmount) FROM Gift").ToString();
-                lblTtlVolunteers.Text = DataAccess.GetValue("Select COUNT(DISTINCT AccountId) From VolunteerAssignment").ToString();
-                lblTtlHours.Text = DataAccess.GetValue("Select SUM(HoursCompleted) From VolunteerAssignment").ToString();
-
-                //get data for the recent gifts
-                string donor;
-                ListViewItem itm;
-                DataTable dt = new DataTable();
-                
-                dt = DataAccess.GetData("SELECT TOP(10) FirstName + ' ' + LastName AS FullName, [Organization Name], GiftDate, ReceivedAmount " +
-                                        "FROM Gift INNER JOIN Account ON Gift.AccountId = Account.AccountId ORDER BY GiftDate DESC");
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    donor = (String.IsNullOrEmpty(row[0].ToString()) || String.IsNullOrWhiteSpace(row[0].ToString())) ? row[1].ToString() : row[0].ToString();
-                    string[] gift = { donor, Convert.ToDateTime(row[2]).ToShortDateString(), Convert.ToDecimal(row[3]).ToString("c")  };
-                    itm = new ListViewItem(gift);
-                    lsvRecentGifts.Items.Add(itm);
-                }
+                Form childForm = new HomeForm(this);
+                childForm.MdiParent = this;
+                childForm.Show();
 
             }
             catch (Exception ex)
@@ -130,5 +112,104 @@ namespace Splash
         {
             this.Close();
         }
-    }
+
+
+        private void ShowNewForm(object sender, EventArgs e)
+        {
+
+            Form childForm = null;
+            PictureBox m = (PictureBox)sender;
+
+            switch (m.Tag)
+            {
+                case "donors":
+                    childForm = new Donor(this);
+                    break;
+                case "gifts":
+                    childForm = new Gift(this);
+                    break;
+                case "volunteers":
+                    childForm = new Volunteers(this);
+                    break;
+                case "home":
+                    childForm = new Volunteers(this);
+                    break;
+            }
+
+            if (childForm != null)
+            {
+                foreach (Form f in this.MdiChildren)
+                {
+                    if (f.GetType() == childForm.GetType())
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+
+            childForm.MdiParent = this;
+            childForm.Show();
+        
+        }
+
+        private void OpenFile(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string FileName = openFileDialog.FileName;
+            }
+        }
+
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string FileName = saveFileDialog.FileName;
+            }
+        }
+
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
+        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+        }
+
+        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+        }
+
+
+        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.ArrangeIcons);
+        }
+
+        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+      }
+
 }

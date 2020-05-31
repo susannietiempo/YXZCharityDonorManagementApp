@@ -58,5 +58,35 @@ namespace Splash
             return retVal;
         }
 
+        public static int SendData(string sql)
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                conn.Open();
+                rowsAffected = cmd.ExecuteNonQuery();
+            }
+
+            return rowsAffected;
+        }
+
+        public static string SQLCleaner(string sql)
+        {
+            while (sql.Contains("  "))
+            {
+                sql = sql.Replace("  ", " ");
+            }
+            return sql.Replace(Environment.NewLine, "");
+        }
+
+
+        public static string SQLFix(string str)
+        {
+
+            return str.Replace("'", "''");
+        }
+
     }
 }

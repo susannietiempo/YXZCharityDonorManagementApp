@@ -283,6 +283,16 @@ namespace Splash.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap question20x {
+            get {
+                object obj = ResourceManager.GetObject("question20x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap smalllogo {
             get {
                 object obj = ResourceManager.GetObject("smalllogo", resourceCulture);
