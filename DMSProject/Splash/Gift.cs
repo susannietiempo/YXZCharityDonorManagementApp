@@ -148,7 +148,7 @@ namespace Splash
                     {
                         btnAdd.Visible = false;
                         btnEdit.Visible = false;
-                        if (MessageBox.Show("Are you sure you want to delete this product?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        if (MessageBox.Show("Are you sure you want to delete this gift?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             DeleteGift();
                         }
@@ -206,21 +206,21 @@ namespace Splash
                 {
                     case "btnFirst":
                         currentGiftId = firstGiftId;
-                        myParent.toolStripStatusLabel1.Text = "The first constituent is currently displayed";
+                        myParent.toolStripStatusLabel1.Text = "The first gift is currently displayed";
                         break;
                     case "btnLast":
                         currentGiftId = lastGiftId;
-                        myParent.toolStripStatusLabel1.Text = "The last constituent is currently displayed";
+                        myParent.toolStripStatusLabel1.Text = "The last gift is currently displayed";
                         break;
                     case "btnPrevious":
                         currentGiftId = previousGiftId.Value;
                         if (currentRecord - 1 == 1)
-                            myParent.toolStripStatusLabel1.Text = "The first constituent is currently displayed";
+                            myParent.toolStripStatusLabel1.Text = "The first gift is currently displayed";
                         break;
                     case "btnNext":
                         currentGiftId = nextGiftId.Value;
                         if (currentRecord == totalGiftCount - 1)
-                            myParent.toolStripStatusLabel1.Text = "The last constituent is currently displayed";
+                            myParent.toolStripStatusLabel1.Text = "The last gift is currently displayed";
                         break;
                 }
 

@@ -245,7 +245,7 @@
             // 
             this.picBoxSearch.BackgroundImage = global::Splash.Properties.Resources.source;
             this.picBoxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxSearch.Location = new System.Drawing.Point(54, 51);
+            this.picBoxSearch.Location = new System.Drawing.Point(48, 51);
             this.picBoxSearch.Name = "picBoxSearch";
             this.picBoxSearch.Size = new System.Drawing.Size(30, 31);
             this.picBoxSearch.TabIndex = 7;

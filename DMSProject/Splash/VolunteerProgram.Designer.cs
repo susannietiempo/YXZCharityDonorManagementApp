@@ -28,65 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSaveDelete = new System.Windows.Forms.Button();
+            this.panelVolProg = new System.Windows.Forms.Panel();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.txtProgDescription = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtProgHeadCount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtProgEnd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtProgStart = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtProgName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtProgTargetFund = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtProgId = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelLogout = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelIcons = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.picBoxDonor = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picBoxLogo = new System.Windows.Forms.PictureBox();
+            this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkIsActive = new System.Windows.Forms.CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelVolProg.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
             this.panelIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panelVolProg);
             this.panel2.Location = new System.Drawing.Point(-8, 93);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 592);
@@ -97,136 +104,182 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Location = new System.Drawing.Point(1, 0);
+            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Controls.Add(this.btnEdit);
+            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.btnSaveDelete);
+            this.panel3.Location = new System.Drawing.Point(3, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1123, 33);
             this.panel3.TabIndex = 5;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1004, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnAdd.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(40, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 27);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnSave
+            // btnEdit
             // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(914, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 27);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Tag = "volunteerpro";
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(129, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 27);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // panel4
+            // btnCancel
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.textBox8);
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.textBox6);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.textBox5);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(14, 41);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1089, 471);
-            this.panel4.TabIndex = 4;
+            this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnCancel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(1004, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 27);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // textBox8
+            // btnSaveDelete
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(594, 172);
-            this.textBox8.MinimumSize = new System.Drawing.Size(204, 45);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(204, 80);
-            this.textBox8.TabIndex = 43;
+            this.btnSaveDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSaveDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveDelete.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveDelete.ForeColor = System.Drawing.Color.White;
+            this.btnSaveDelete.Location = new System.Drawing.Point(914, 3);
+            this.btnSaveDelete.Name = "btnSaveDelete";
+            this.btnSaveDelete.Size = new System.Drawing.Size(75, 27);
+            this.btnSaveDelete.TabIndex = 3;
+            this.btnSaveDelete.Text = "Delete";
+            this.btnSaveDelete.UseVisualStyleBackColor = false;
+            this.btnSaveDelete.Click += new System.EventHandler(this.btnSaveDelete_Click);
             // 
-            // button5
+            // panelVolProg
             // 
-            this.button5.BackColor = System.Drawing.Color.Gray;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(560, 353);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 27);
-            this.button5.TabIndex = 42;
-            this.button5.Text = "Last >>";
-            this.button5.UseVisualStyleBackColor = false;
+            this.panelVolProg.BackColor = System.Drawing.Color.White;
+            this.panelVolProg.Controls.Add(this.chkIsActive);
+            this.panelVolProg.Controls.Add(this.label25);
+            this.panelVolProg.Controls.Add(this.btnLast);
+            this.panelVolProg.Controls.Add(this.btnFirst);
+            this.panelVolProg.Controls.Add(this.btnNext);
+            this.panelVolProg.Controls.Add(this.btnPrevious);
+            this.panelVolProg.Controls.Add(this.txtProgDescription);
+            this.panelVolProg.Controls.Add(this.label10);
+            this.panelVolProg.Controls.Add(this.label8);
+            this.panelVolProg.Controls.Add(this.txtProgHeadCount);
+            this.panelVolProg.Controls.Add(this.label7);
+            this.panelVolProg.Controls.Add(this.txtProgEnd);
+            this.panelVolProg.Controls.Add(this.label6);
+            this.panelVolProg.Controls.Add(this.txtProgStart);
+            this.panelVolProg.Controls.Add(this.label5);
+            this.panelVolProg.Controls.Add(this.txtProgName);
+            this.panelVolProg.Controls.Add(this.label4);
+            this.panelVolProg.Controls.Add(this.txtProgTargetFund);
+            this.panelVolProg.Controls.Add(this.label3);
+            this.panelVolProg.Controls.Add(this.txtProgId);
+            this.panelVolProg.Controls.Add(this.label12);
+            this.panelVolProg.Location = new System.Drawing.Point(19, 41);
+            this.panelVolProg.Name = "panelVolProg";
+            this.panelVolProg.Size = new System.Drawing.Size(1089, 471);
+            this.panelVolProg.TabIndex = 4;
             // 
-            // button4
+            // btnLast
             // 
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(325, 353);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 27);
-            this.button4.TabIndex = 41;
-            this.button4.Text = "<< First";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLast.BackColor = System.Drawing.Color.Gray;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLast.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.Color.White;
+            this.btnLast.Location = new System.Drawing.Point(624, 346);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(75, 27);
+            this.btnLast.TabIndex = 47;
+            this.btnLast.Text = "Last >>";
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.Navigation_Handler);
             // 
-            // button3
+            // btnFirst
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(481, 353);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 27);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Next >";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnFirst.BackColor = System.Drawing.Color.Gray;
+            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFirst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFirst.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.ForeColor = System.Drawing.Color.White;
+            this.btnFirst.Location = new System.Drawing.Point(389, 346);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(75, 27);
+            this.btnFirst.TabIndex = 46;
+            this.btnFirst.Text = "<< First";
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.Navigation_Handler);
             // 
-            // button2
+            // btnNext
             // 
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(402, 353);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "< Back";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNext.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(545, 346);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 27);
+            this.btnNext.TabIndex = 45;
+            this.btnNext.Text = "Next >";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.Navigation_Handler);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.White;
+            this.btnPrevious.Location = new System.Drawing.Point(466, 346);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 27);
+            this.btnPrevious.TabIndex = 44;
+            this.btnPrevious.Text = "< Back";
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.Navigation_Handler);
+            // 
+            // txtProgDescription
+            // 
+            this.txtProgDescription.BackColor = System.Drawing.Color.White;
+            this.txtProgDescription.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgDescription.Location = new System.Drawing.Point(594, 137);
+            this.txtProgDescription.MinimumSize = new System.Drawing.Size(204, 45);
+            this.txtProgDescription.Multiline = true;
+            this.txtProgDescription.Name = "txtProgDescription";
+            this.txtProgDescription.Size = new System.Drawing.Size(204, 80);
+            this.txtProgDescription.TabIndex = 43;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label10.Location = new System.Drawing.Point(523, 172);
+            this.label10.Location = new System.Drawing.Point(523, 137);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 16;
@@ -245,14 +298,14 @@
             this.label8.Text = "Target Head Count";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox6
+            // txtProgHeadCount
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(221, 230);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(204, 22);
-            this.textBox6.TabIndex = 11;
+            this.txtProgHeadCount.BackColor = System.Drawing.Color.White;
+            this.txtProgHeadCount.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgHeadCount.Location = new System.Drawing.Point(221, 230);
+            this.txtProgHeadCount.Name = "txtProgHeadCount";
+            this.txtProgHeadCount.Size = new System.Drawing.Size(204, 22);
+            this.txtProgHeadCount.TabIndex = 11;
             // 
             // label7
             // 
@@ -266,14 +319,14 @@
             this.label7.Text = "End Date";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox5
+            // txtProgEnd
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(221, 199);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(204, 22);
-            this.textBox5.TabIndex = 9;
+            this.txtProgEnd.BackColor = System.Drawing.Color.White;
+            this.txtProgEnd.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgEnd.Location = new System.Drawing.Point(221, 199);
+            this.txtProgEnd.Name = "txtProgEnd";
+            this.txtProgEnd.Size = new System.Drawing.Size(204, 22);
+            this.txtProgEnd.TabIndex = 9;
             // 
             // label6
             // 
@@ -287,14 +340,14 @@
             this.label6.Text = "Start Date";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox4
+            // txtProgStart
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(221, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(204, 22);
-            this.textBox4.TabIndex = 7;
+            this.txtProgStart.BackColor = System.Drawing.Color.White;
+            this.txtProgStart.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgStart.Location = new System.Drawing.Point(221, 168);
+            this.txtProgStart.Name = "txtProgStart";
+            this.txtProgStart.Size = new System.Drawing.Size(204, 22);
+            this.txtProgStart.TabIndex = 7;
             // 
             // label5
             // 
@@ -307,34 +360,34 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Program Name";
             // 
-            // textBox3
+            // txtProgName
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(221, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 22);
-            this.textBox3.TabIndex = 5;
+            this.txtProgName.BackColor = System.Drawing.Color.White;
+            this.txtProgName.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgName.Location = new System.Drawing.Point(221, 136);
+            this.txtProgName.Name = "txtProgName";
+            this.txtProgName.Size = new System.Drawing.Size(204, 22);
+            this.txtProgName.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label4.Location = new System.Drawing.Point(521, 134);
+            this.label4.Location = new System.Drawing.Point(521, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Target Fund";
             // 
-            // textBox2
+            // txtProgTargetFund
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(594, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtProgTargetFund.BackColor = System.Drawing.Color.White;
+            this.txtProgTargetFund.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProgTargetFund.Location = new System.Drawing.Point(594, 105);
+            this.txtProgTargetFund.Name = "txtProgTargetFund";
+            this.txtProgTargetFund.Size = new System.Drawing.Size(204, 22);
+            this.txtProgTargetFund.TabIndex = 3;
             // 
             // label3
             // 
@@ -347,13 +400,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Program ID";
             // 
-            // textBox1
+            // txtProgId
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.Location = new System.Drawing.Point(221, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtProgId.BackColor = System.Drawing.Color.LightGray;
+            this.txtProgId.Location = new System.Drawing.Point(221, 106);
+            this.txtProgId.Name = "txtProgId";
+            this.txtProgId.Size = new System.Drawing.Size(100, 20);
+            this.txtProgId.TabIndex = 1;
             // 
             // label12
             // 
@@ -389,6 +442,26 @@
             this.labelLogout.Size = new System.Drawing.Size(47, 14);
             this.labelLogout.TabIndex = 4;
             this.labelLogout.Text = "LogOut";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Splash.Properties.Resources.accounticon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(958, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 37);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBoxLogo
+            // 
+            this.picBoxLogo.BackgroundImage = global::Splash.Properties.Resources.petonly;
+            this.picBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxLogo.Location = new System.Drawing.Point(24, 0);
+            this.picBoxLogo.Name = "picBoxLogo";
+            this.picBoxLogo.Size = new System.Drawing.Size(45, 37);
+            this.picBoxLogo.TabIndex = 1;
+            this.picBoxLogo.TabStop = false;
             // 
             // label1
             // 
@@ -429,6 +502,18 @@
             this.label21.TabIndex = 23;
             this.label21.Text = "Volunteers";
             // 
+            // picBoxVolunteer
+            // 
+            this.picBoxVolunteer.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
+            this.picBoxVolunteer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.No;
+            this.picBoxVolunteer.Location = new System.Drawing.Point(286, 2);
+            this.picBoxVolunteer.Name = "picBoxVolunteer";
+            this.picBoxVolunteer.Size = new System.Drawing.Size(37, 38);
+            this.picBoxVolunteer.TabIndex = 22;
+            this.picBoxVolunteer.TabStop = false;
+            this.picBoxVolunteer.Click += new System.EventHandler(this.ShowNewForm);
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -440,6 +525,19 @@
             this.label20.TabIndex = 21;
             this.label20.Text = "Gifts";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Splash.Properties.Resources.gifticongray;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Location = new System.Drawing.Point(227, 1);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(37, 38);
+            this.pictureBox5.TabIndex = 20;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "gifts";
+            this.pictureBox5.Click += new System.EventHandler(this.ShowNewForm);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -450,6 +548,19 @@
             this.label19.Size = new System.Drawing.Size(38, 13);
             this.label19.TabIndex = 19;
             this.label19.Text = "Donors";
+            // 
+            // picBoxDonor
+            // 
+            this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
+            this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxDonor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
+            this.picBoxDonor.Name = "picBoxDonor";
+            this.picBoxDonor.Size = new System.Drawing.Size(37, 38);
+            this.picBoxDonor.TabIndex = 18;
+            this.picBoxDonor.TabStop = false;
+            this.picBoxDonor.Tag = "donors";
+            this.picBoxDonor.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label18
             // 
@@ -463,52 +574,6 @@
             this.label18.TabIndex = 17;
             this.label18.Text = "Add New";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.label17.Location = new System.Drawing.Point(42, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(33, 13);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Home";
-            // 
-            // picBoxVolunteer
-            // 
-            this.picBoxVolunteer.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
-            this.picBoxVolunteer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.No;
-            this.picBoxVolunteer.Location = new System.Drawing.Point(286, 2);
-            this.picBoxVolunteer.Name = "picBoxVolunteer";
-            this.picBoxVolunteer.Size = new System.Drawing.Size(37, 38);
-            this.picBoxVolunteer.TabIndex = 22;
-            this.picBoxVolunteer.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::Splash.Properties.Resources.gifticongray;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(227, 1);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "gifts";
-            // 
-            // picBoxDonor
-            // 
-            this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
-            this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxDonor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
-            this.picBoxDonor.Name = "picBoxDonor";
-            this.picBoxDonor.Size = new System.Drawing.Size(37, 38);
-            this.picBoxDonor.TabIndex = 18;
-            this.picBoxDonor.TabStop = false;
-            this.picBoxDonor.Tag = "donors";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::Splash.Properties.Resources.plusicon;
@@ -519,6 +584,17 @@
             this.pictureBox3.Size = new System.Drawing.Size(37, 38);
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.label17.Location = new System.Drawing.Point(42, 41);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(33, 13);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Home";
             // 
             // picBoxHome
             // 
@@ -531,26 +607,31 @@
             this.picBoxHome.TabIndex = 14;
             this.picBoxHome.TabStop = false;
             this.picBoxHome.Tag = "home";
+            this.picBoxHome.Click += new System.EventHandler(this.ShowNewForm);
             // 
-            // pictureBox1
+            // errProvider
             // 
-            this.pictureBox1.BackgroundImage = global::Splash.Properties.Resources.accounticon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(958, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 37);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.errProvider.ContainerControl = this;
             // 
-            // picBoxLogo
+            // chkIsActive
             // 
-            this.picBoxLogo.BackgroundImage = global::Splash.Properties.Resources.petonly;
-            this.picBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxLogo.Location = new System.Drawing.Point(24, 0);
-            this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(45, 37);
-            this.picBoxLogo.TabIndex = 1;
-            this.picBoxLogo.TabStop = false;
+            this.chkIsActive.AutoSize = true;
+            this.chkIsActive.Location = new System.Drawing.Point(591, 238);
+            this.chkIsActive.Name = "chkIsActive";
+            this.chkIsActive.Size = new System.Drawing.Size(15, 14);
+            this.chkIsActive.TabIndex = 48;
+            this.chkIsActive.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.label25.Location = new System.Drawing.Point(535, 238);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.TabIndex = 49;
+            this.label25.Text = "Is Active";
             // 
             // VolunteerProgram
             // 
@@ -562,13 +643,17 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "VolunteerProgram";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VolunteerProgram";
+            this.Load += new System.EventHandler(this.VolunteerProgram_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panelVolProg.ResumeLayout(false);
+            this.panelVolProg.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
@@ -576,8 +661,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -585,28 +669,21 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelVolProg;
+        private System.Windows.Forms.TextBox txtProgDescription;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtProgHeadCount;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtProgEnd;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtProgStart;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtProgName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtProgTargetFund;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtProgId;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelLogout;
@@ -624,5 +701,17 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox picBoxHome;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSaveDelete;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.ErrorProvider errProvider;
+        private System.Windows.Forms.CheckBox chkIsActive;
+        private System.Windows.Forms.Label label25;
     }
 }
