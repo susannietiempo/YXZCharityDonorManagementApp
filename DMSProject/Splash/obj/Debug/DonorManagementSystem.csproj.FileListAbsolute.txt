@@ -29,3 +29,5 @@ C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Pro
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\DonorManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.exe
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.pdb
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteerAssignment.resources
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteerProgram.resources

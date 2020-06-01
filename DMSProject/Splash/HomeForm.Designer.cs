@@ -119,7 +119,7 @@
             this.panelIcons.Controls.Add(this.picBoxAdd);
             this.panelIcons.Controls.Add(this.label13);
             this.panelIcons.Controls.Add(this.picBoxHome);
-            this.panelIcons.Location = new System.Drawing.Point(546, 41);
+            this.panelIcons.Location = new System.Drawing.Point(402, 41);
             this.panelIcons.Name = "panelIcons";
             this.panelIcons.Size = new System.Drawing.Size(368, 57);
             this.panelIcons.TabIndex = 8;

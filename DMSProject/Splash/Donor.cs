@@ -60,6 +60,7 @@ namespace Splash
             {
                 Control control = (Control)sender;
                 Display.ShowChildForm(control, myParent, this);
+
             }
             catch (Exception ex)
             {
@@ -67,27 +68,30 @@ namespace Splash
             }
         }
 
-
-
-
+        /// <summary>
+        /// Adds a new gift record to the database. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddNewRecord(object sender, EventArgs e)
         {
             try
             {
                 //create a method for this
+                btnCancel.Cursor = Cursors.Hand;
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
-                btnSaveDelete.BackColor = Color.DarkSeaGreen;
+                btnSaveDelete.BackColor = Color.SeaGreen;
                 txtAccountId.Enabled = false;
                 txtAccountId.BackColor = Color.LightGray;
-
 
                 UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, false);
                 txtTitle.Focus();
                 UtilityHelper.ControlState(panelDonor.Controls, false);
                 UtilityHelper.ClearControls(panelDonor.Controls);
                 myParent.toolStripStatusLabel1.Text = "Action Required: Please select a constituency type to proceed!";
+                myParent.toolStripStatusLabel1.ForeColor = Color.DarkRed;
 
                 LoadConstituencyType();
                 txtDateAdded.Text = DateTime.Today.ToShortDateString();
@@ -220,8 +224,6 @@ namespace Splash
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
             }
 
-
-
         } //end method
 
 
@@ -263,10 +265,11 @@ namespace Splash
         {
             try
             {
+                btnCancel.Cursor = Cursors.Hand;
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
-                btnSaveDelete.BackColor = Color.DarkSeaGreen;
+                btnSaveDelete.BackColor = Color.SeaGreen;
                 txtAccountId.Enabled = false;
                 txtAccountId.BackColor = Color.LightGray;
                 UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, false);
@@ -397,11 +400,10 @@ namespace Splash
         }
 
         /// <summary>
-        /// Load the first product in the table. Ordering the Products by KeyName
+        /// Load the first donor in the table. Ordering the donors by KeyName
         /// </summary>
         private void LoadFirstDonor()
         {
-
             currentAccountId = Convert.ToInt32(DataAccess.GetValue("SELECT TOP (1) AccountId FROM Account ORDER BY KeyName"));
             LoadDonorInfo();
         }

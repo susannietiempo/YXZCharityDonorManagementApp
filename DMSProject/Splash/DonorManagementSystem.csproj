@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -106,6 +106,18 @@
     </Compile>
     <Compile Include="UIUtilities.cs" />
     <Compile Include="Validation.cs" />
+    <Compile Include="VolunteerAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VolunteerAssignment.Designer.cs">
+      <DependentUpon>VolunteerAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteerProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VolunteerProgram.Designer.cs">
+      <DependentUpon>VolunteerProgram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Volunteers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </Compile>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VolunteerAssignment.resx">
+      <DependentUpon>VolunteerAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VolunteerProgram.resx">
+      <DependentUpon>VolunteerProgram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Volunteers.resx">
       <DependentUpon>Volunteers.cs</DependentUpon>
@@ -251,6 +269,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Screens\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volunteerpic455.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

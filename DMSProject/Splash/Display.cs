@@ -33,6 +33,12 @@ namespace Splash
                 case "home":
                     childForm = new HomeForm(myParent);
                     break;
+                case "volunteerassn":
+                    childForm = new VolunteerAssignment(myParent);
+                    break;
+                case "volunteerprog":
+                    childForm = new VolunteerProgram(myParent);
+                    break;
             }
 
             if (childForm != null)

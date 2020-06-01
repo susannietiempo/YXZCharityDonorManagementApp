@@ -180,5 +180,16 @@ namespace Splash
             }
         }
 
+
+        /// <summary>
+        /// This updates the parent MDI parent state.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="color"></param>
+        public static void ToolStripDisplay(MainForm myParent, string text, Color color)
+        {
+            myParent.toolStripStatusLabel1.Text = text;
+            myParent.toolStripStatusLabel1.ForeColor = color;
+        }
     }
 }

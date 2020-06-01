@@ -42,103 +42,479 @@ namespace Splash
         #region Events
 
 
+        private void Gift_Load(object sender, EventArgs e)
+        {
+            LoadDonorName();
+            LoadFirstGift();
+        }
+
+        /// <summary>
+        /// Handles the ShowNewForm event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowNewForm(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                Display.ShowChildForm(control, myParent, this);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnCancel.Cursor = Cursors.Hand;
+                btnAdd.Visible = false;
+                btnEdit.Visible = false;
+                btnSaveDelete.Text = "Save";
+                btnSaveDelete.BackColor = Color.SeaGreen;
+                txtGiftId.Enabled = false;
+                txtGiftId.BackColor = Color.LightGray;
+
+                UtilityHelper.ControlState(panelGift.Controls, false);
+                UtilityHelper.ClearControls(panelGift.Controls);
+                UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, false);
+
+                UtilityHelper.ToolStripDisplay(myParent, "Action Required: Please select a donor to proceed!", Color.DarkRed);
+
+              LoadDonorName();
+                cboDonorName.Focus();
+          
+                txtDate.Text = DateTime.Today.ToShortDateString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnCancel.Cursor = Cursors.Hand;
+                btnAdd.Visible = false;
+                btnEdit.Visible = false;
+                btnSaveDelete.Text = "Save";
+                btnSaveDelete.BackColor = Color.SeaGreen;
+                txtGiftId.Enabled = false;
+                txtGiftId.BackColor = Color.LightGray;
+                UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, false);
+                cboDonorName.Focus();
+                UtilityHelper.ToolStripDisplay(myParent, "Edit Gift...", Color.Black);
+                UtilityHelper.ControlState(panelGift.Controls, false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+        /// <summary>
+        /// Handles the save and delete delet events. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnSaveDelete.Text == "Save")
+                {
+                    UtilityHelper.ProgressBar(myParent);
+                    if (ValidateChildren(ValidationConstraints.Enabled))
+                    {
+                        if (txtGiftId.Text == string.Empty)
+                        {
+                            CreateGift();
+                        }
+                        else
+                        {
+                            SaveGiftChanges();
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (btnSaveDelete.Text == "Delete")
+                    {
+                        btnAdd.Visible = false;
+                        btnEdit.Visible = false;
+                        if (MessageBox.Show("Are you sure you want to delete this product?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            DeleteGift();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+
+            ButtonReset();
+
+            myParent.prgBar.Value = 0;
+            myParent.statusStrip.Refresh();
+        }
+
+        /// <summary>
+        /// Cancel an add, edit, or delete action.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    LoadGiftInfo();
+                    btnAdd.Visible = true;
+                    btnEdit.Visible = true;
+                    btnSaveDelete.Text = "Delete";
+                    btnSaveDelete.BackColor = Color.IndianRed;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+
+        /// <summary>
+        /// Handle navigation button interaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Navigation_Handler(object sender, EventArgs e)
+        {
+            try
+            {
+                Button b = (Button)sender;
+                myParent.toolStripStatusLabel1.Text = string.Empty;
+
+                switch (b.Name)
+                {
+                    case "btnFirst":
+                        currentGiftId = firstGiftId;
+                        myParent.toolStripStatusLabel1.Text = "The first constituent is currently displayed";
+                        break;
+                    case "btnLast":
+                        currentGiftId = lastGiftId;
+                        myParent.toolStripStatusLabel1.Text = "The last constituent is currently displayed";
+                        break;
+                    case "btnPrevious":
+                        currentGiftId = previousGiftId.Value;
+                        if (currentRecord - 1 == 1)
+                            myParent.toolStripStatusLabel1.Text = "The first constituent is currently displayed";
+                        break;
+                    case "btnNext":
+                        currentGiftId = nextGiftId.Value;
+                        if (currentRecord == totalGiftCount - 1)
+                            myParent.toolStripStatusLabel1.Text = "The last constituent is currently displayed";
+                        break;
+                }
+
+                LoadGiftInfo();
+                UtilityHelper.NextPreviousButtonManagement(btnPrevious, btnNext, previousGiftId, nextGiftId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+
+        private void txt_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                TextBox txt = (TextBox)sender;
+                string txtBoxName = txt.Tag.ToString();
+                string errMsg = null;
+
+                if (txt.Text == string.Empty)
+                {
+                    errMsg = $"{txtBoxName} is required.";
+                    e.Cancel = true;
+                }
+
+                if (txt.Name == "txtDate")
+                {
+                    if (!IsDate(txt.Text))
+                    {
+                        errMsg = $"{txtBoxName} is not a valid date. (Format: yyyy-mm-dd)";
+                        e.Cancel = true;
+                    }
+                }
+                
+                if (txt.Name == "txtReceivedAmount")
+                {
+                    if (!IsNumeric(txt.Text))
+                    {
+                        errMsg = $"{txtBoxName} is not numeric ";
+                        e.Cancel = true;
+                    }
+                }
+
+                errProvider.SetError(txt, errMsg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+
+
+
+        } //txt_Validating end method
+
+        private void cboDonorName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                UtilityHelper.EnableControl(panelGift.Controls, true);
+                txtGiftId.Enabled = false;
+
+                if (cboDonorName.SelectedIndex == 0)
+                {
+                    UtilityHelper.EnableControl(panelGift.Controls, false);
+                    cboDonorName.Enabled = true;
+                    cboDonorName.Focus();
+                }
+                else
+                {
+                    UtilityHelper.ToolStripDisplay(myParent, "Add gift...", Color.Black);
+                    if (btnAdd.Visible)
+                    {
+                        UtilityHelper.ControlState(panelGift.Controls, true);
+
+                    }
+                    else
+                    {
+                        UtilityHelper.ControlState(panelGift.Controls, false);
+                    }
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+
+        } //end method
+
         #endregion
 
         #region Database Actions
+
+
+        private void LoadDonorName()
+        {
+            DataTable dt = DataAccess.GetData("SELECT AccountId, KeyName  FROM Account ORDER BY KeyName");
+            UIUtilities.FillListControl(cboDonorName, "KeyName", "AccountId", dt, true, "--Select a donor--");
+        }
+
+
         /// <summary>
-        /// Load and bind the constituency info to the controls on the form and handle navigation
+        /// Load the first gift in the table. Ordering the gifts by giftdate
         /// </summary>
-        private void LoadDonorInfo()
+        private void LoadFirstGift()
+        {
+            currentGiftId = Convert.ToInt32(DataAccess.GetValue("SELECT TOP (1) GiftId FROM Gift ORDER BY GiftDate DESC"));
+            LoadGiftInfo();
+        }
+
+
+        /// <summary>
+        /// Load and bind the gift info to the controls on the form and handle navigation
+        /// </summary>
+        /// 
+        private void LoadGiftInfo()
         {
 
-            string sqlAccountByID = $"SELECT (SELECT KeyName FROM Account WHERE Account.AccountId = Gift.AccountId) AS DonorName, GiftId, GiftDate, " +
-                                    $"ReceivedAmount, GiftNote, GiftType, Approach, Campaign, Fund FROM Gift WHERE Gift.AccountId = {currentGiftId}";
+            string sqlGiftById = $"SELECT (SELECT KeyName FROM Account WHERE Account.AccountId = Gift.AccountId) AS DonorName, GiftId, GiftDate, " +
+                                    $"ReceivedAmount, GiftNote, GiftType, Approach, Campaign, Fund, AccountId FROM Gift WHERE GiftId = {currentGiftId}";
             string sqlNav = $@"
-                SELECT 
+             SELECT 
                 (
-                    SELECT TOP(1) AccountId  FROM Account ORDER BY KeyName
-                ) AS FirstAccountId,
-                q.PreviousAccountId,
-                q.NextAccountId,
+                    SELECT TOP(1) GiftId  FROM Gift ORDER BY GiftDate DESC
+                ) AS FirstGiftId,
+                q.PreviousGiftId,
+                q.NextGiftId,
                 (
-                    SELECT TOP(1) AccountId FROM Account ORDER BY KeyName DESC
-                ) as LastAccountId,
+                    SELECT TOP(1) GiftId FROM Gift ORDER BY GiftDate 
+                ) as LastGiftId,
                 q.RowNumber
                 FROM
                 (
-                    SELECT AccountId, KeyName,
-                    LEAD(AccountId) OVER(ORDER BY KeyName) AS NextAccountId,
-                    LAG(AccountId) OVER(ORDER BY KeyName) AS PreviousAccountId,
-                    ROW_NUMBER() OVER(ORDER BY KeyName) AS 'RowNumber'
-                    FROM Account
+                    SELECT GiftId, GiftDate,
+                    LEAD(GiftId) OVER(ORDER BY GiftDate DESC) AS NextGiftId,
+                    LAG(GiftId) OVER(ORDER BY GiftDate DESC) AS PreviousGiftId,
+                    ROW_NUMBER() OVER(ORDER BY GiftDate DESC) AS 'RowNumber'
+                    FROM Gift
                 ) AS q
-                WHERE q.AccountId = {currentGiftId}
-                ORDER BY q.KeyName";
+                WHERE q.GiftId = {currentGiftId}
+                ORDER BY q.GiftDate
+             ";
 
             string sqlGiftCount = "SELECT COUNT(GiftId) AS GiftCount FROM Gift";
             sqlNav = DataAccess.SQLCleaner(sqlNav);
 
-            string[] sqlStatements = new string[] { sqlAccountByID, sqlNav, sqlDonorCount };
+            string[] sqlStatements = new string[] { sqlGiftById, sqlNav, sqlGiftCount };
 
             DataSet ds = new DataSet();
             ds = DataAccess.GetData(sqlStatements);
 
             if (ds.Tables[0].Rows.Count == 1)
             {
-                DataRow selectedDonor = ds.Tables[0].Rows[0];
+                DataRow selectedGift = ds.Tables[0].Rows[0];
 
-                txtAccountId.Text = selectedDonor["AccountId"].ToString();
-                cboConstituencyType.SelectedValue = Convert.ToInt32(selectedDonor["ConstituencyTypeId"]);
-                txtTitle.Text = selectedDonor["Title"].ToString();
-                txtFirstName.Text = selectedDonor["FirstName"].ToString();
-                txtMidName.Text = selectedDonor["MiddleName"].ToString();
-                txtLastName.Text = selectedDonor["LastName"].ToString();
-                txtOrgName.Text = selectedDonor["OrganizationName"].ToString();
-                txtSuffix.Text = selectedDonor["Suffix"].ToString();
-                txtAddress.Text = selectedDonor["StreetAddress"].ToString();
-                txtCity.Text = selectedDonor["City"].ToString();
-                txtProvince.Text = selectedDonor["Province"].ToString();
-                txtCountry.Text = selectedDonor["Country"].ToString();
-                txtPostalCode.Text = selectedDonor["PostalCode"].ToString();
-                txtGender.Text = selectedDonor["Gender"].ToString();
-                txtEmail.Text = selectedDonor["Email"].ToString();
-                txtBirthdate.Text = selectedDonor["BirthDate"] == DBNull.Value ? "" : Convert.ToDateTime(selectedDonor["BirthDate"]).ToShortDateString();
-                txtPhonenumber.Text = selectedDonor["PhoneNumber"].ToString();
-                txtDateAdded.Text = Convert.ToDateTime(selectedDonor["DateAdded"]).ToShortDateString();
-                chkIsActive.Checked = !Convert.ToBoolean(selectedDonor["IsInactive"]);
+                txtGiftId.Text = selectedGift["GiftId"].ToString();
+                cboDonorName.SelectedValue = Convert.ToInt32(selectedGift["AccountId"]);
+                txtReceivedAmount.Text = Convert.ToDecimal(selectedGift["ReceivedAmount"]).ToString("c");
+                txtGiftNote.Text = selectedGift["GiftNote"].ToString();
+                txtGiftType.Text = selectedGift["GiftType"].ToString();
+                txtApproach.Text = selectedGift["Approach"].ToString();
+                txtCampaign.Text = selectedGift["Campaign"].ToString();
+                txtFund.Text = selectedGift["Fund"].ToString();
+                txtDate.Text = Convert.ToDateTime(selectedGift["GiftDate"]).ToShortDateString();
 
-                firstAccountId = Convert.ToInt32(ds.Tables[1].Rows[0]["FirstAccountId"]);
-                previousAccountId = ds.Tables[1].Rows[0]["PreviousAccountId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["PreviousAccountId"]) : (int?)null;
-                nextAccountId = ds.Tables[1].Rows[0]["NextAccountId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextAccountId"]) : (int?)null;
-                lastAccountId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastAccountId"]);
+
+                firstGiftId = Convert.ToInt32(ds.Tables[1].Rows[0]["FirstGiftId"]);
+                previousGiftId = ds.Tables[1].Rows[0]["PreviousGiftId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["PreviousGiftId"]) : (int?)null;
+                nextGiftId = ds.Tables[1].Rows[0]["NextGiftId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextGiftId"]) : (int?)null;
+                lastGiftId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastGiftId"]);
                 currentRecord = Convert.ToInt32(ds.Tables[1].Rows[0]["RowNumber"]);
 
-                totalDonorCount = Convert.ToInt32(ds.Tables[2].Rows[0]["DonorCount"]);
-
-                myParent.toolStripStatusLabel1.Text = $"Displaying constituent {currentRecord} of {totalDonorCount}";
-                UtilityHelper.ControlState(panelDonor.Controls, true);
-                txtAccountId.Enabled = false;
+                totalGiftCount = Convert.ToInt32(ds.Tables[2].Rows[0]["GiftCount"]);
+                UtilityHelper.ToolStripDisplay(myParent, $"Displaying gift { currentRecord} of { totalGiftCount}", Color.Black);
+                UtilityHelper.ControlState(panelGift.Controls, true);
+                txtGiftId.Enabled = false;
             }
             else
             {
                 MessageBox.Show("The constituents no longer exists");
-                LoadFirstDonor();
+                LoadFirstGift();
             }
 
         }
+
+
+        /// <summary>
+        /// Create the new gift record to the database. 
+        /// </summary>
+        private void CreateGift()
+        {
+            string sqlInsertGift = $@"
+                        INSERT INTO Gift (ReceivedAmount, GiftNote, GiftType, Approach, GiftDate, Campaign, Fund,  AccountId )
+                        VALUES
+                        (
+                           {Convert.ToDecimal(txtReceivedAmount.Text.Trim())},
+                           '{DataAccess.SQLFix(txtGiftNote.Text.Trim())}',
+                           '{DataAccess.SQLFix(txtGiftType.Text.Trim())}',
+                           '{DataAccess.SQLFix(txtApproach.Text.Trim())}',
+                           '{Convert.ToDateTime(txtDate.Text.Trim())}',
+                           '{DataAccess.SQLFix(txtCampaign.Text.Trim())}',
+                           '{DataAccess.SQLFix(txtFund.Text.Trim())}',
+                           {cboDonorName.SelectedValue}
+                    )";
+
+            sqlInsertGift = DataAccess.SQLCleaner(sqlInsertGift);
+            int rowsAffected = DataAccess.SendData(sqlInsertGift);
+
+            UtilityHelper.ActionStatusMessage(rowsAffected, "Gift was added succesfully!", "Gift was not added. Please try again!");
+            UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
+            LoadGiftInfo();
+
+        } //end create method
+
+        /// <summary>
+        /// Saves the updates in the gift form information to the record in the database.
+        /// </summary>
+        private void SaveGiftChanges()
+        {
+            decimal amount = Convert.ToDecimal((txtReceivedAmount.Text.Trim().Replace("$", "")));
+            string sqlUpdateGift = $@"
+                         UPDATE Gift
+                         SET
+                            ReceivedAmount = {amount},
+                            GiftNote = '{DataAccess.SQLFix(txtGiftNote.Text.Trim())}',
+                            GiftType = '{DataAccess.SQLFix(txtGiftType.Text.Trim())}',
+                            Approach = '{DataAccess.SQLFix(txtApproach.Text.Trim())}',
+                            GiftDate = '{Convert.ToDateTime(txtDate.Text.Trim())}',
+                            Campaign = '{DataAccess.SQLFix(txtCampaign.Text.Trim())}',
+                            Fund = '{DataAccess.SQLFix(txtFund.Text.Trim())}',
+                            AccountId = {cboDonorName.SelectedValue}
+                            WHERE GiftId = {Convert.ToInt32(txtGiftId.Text)}
+                ";
+
+            sqlUpdateGift = DataAccess.SQLCleaner(sqlUpdateGift);
+            int rowsAffected = DataAccess.SendData(sqlUpdateGift);
+
+            UtilityHelper.ActionStatusMessage(rowsAffected, "Gift was updated succesfully!", "Gift was not updated. Please try again");
+            LoadGiftInfo();
+
+            UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
+        }
+
+        private void DeleteGift()
+        {
+            string sqlDelete = $"DELETE FROM Gift WHERE GiftId = {Convert.ToInt32(txtGiftId.Text)}";
+
+            int rowsAffected = DataAccess.SendData(sqlDelete);
+
+            UtilityHelper.ActionStatusMessage(rowsAffected, "Gift was deleted succesfully!", "Guft was not deleted. Please try again");
+            LoadGiftInfo();
+
+            UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
+        }
+
+
         #endregion
 
         #region Utility Methods
 
+
+        /// <summary>
+        /// Validates if a string is in a  valid date format.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private bool IsDate(string value)
+        {
+            return DateTime.TryParse(value, out DateTime a);
+        }
+
+        private bool IsNumeric(string value)
+        {
+            return Decimal.TryParse(value, out decimal a);
+        }
+
+
+        /// <summary>
+        /// Resets the CRUD buttons to default state. 
+        /// </summary>
+
+        private void ButtonReset()
+        {
+            btnAdd.Visible = true;
+            btnEdit.Visible = true;
+            btnSaveDelete.Text = "Delete";
+            btnSaveDelete.BackColor = Color.IndianRed;
+        }
+
         #endregion
 
-
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Control control = (Control)sender;
-
-            Display.ShowChildForm(control, myParent, this);
-        }
 
     }
 }
