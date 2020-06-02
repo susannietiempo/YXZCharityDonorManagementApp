@@ -28,7 +28,7 @@ namespace Splash
                     childForm = new Gift(myParent);
                     break;
                 case "volunteers":
-                    childForm = new Volunteers(myParent);
+                    childForm = new VolunteersHome(myParent);
                     break;
                 case "home":
                     childForm = new HomeForm(myParent);
@@ -39,9 +39,19 @@ namespace Splash
                 case "volunteerprog":
                     childForm = new VolunteerProgram(myParent);
                     break;
-                case "reports":
-                    childForm = new VolunteerProgram(myParent);
+                case "volunteerhome":
+                    childForm = new VolunteersHome(myParent);
                     break;
+                case "reportshome":
+                    childForm = new ReportsHome(myParent);
+                    break;
+                case "reportassn":
+                    childForm = new ReportsProgramDonor(myParent);
+                    break;
+                case "reportgift":
+                    childForm = new ReportsProgramDonor(myParent);
+                    break;
+
             }
 
             if (childForm != null)
@@ -59,6 +69,61 @@ namespace Splash
             childForm.MdiParent = myParent;
             childForm.Show();
            
+        }
+
+        public static void ShowChildForm(ToolStripMenuItem toolStrip, MainForm myParent)
+        {
+            Form childForm = null;
+
+            switch (toolStrip.Tag)
+            {
+                case "donors":
+                    childForm = new Donor(myParent);
+                    break;
+                case "gifts":
+                    childForm = new Gift(myParent);
+                    break;
+                case "volunteers":
+                    childForm = new VolunteersHome(myParent);
+                    break;
+                case "home":
+                    childForm = new HomeForm(myParent);
+                    break;
+                case "volunteerassn":
+                    childForm = new VolunteerAssignment(myParent);
+                    break;
+                case "volunteerprog":
+                    childForm = new VolunteerProgram(myParent);
+                    break;
+                case "volunteerhome":
+                    childForm = new VolunteersHome(myParent);
+                    break;
+                case "reportshome":
+                    childForm = new ReportsHome(myParent);
+                    break;
+                case "reportassn":
+                    childForm = new ReportsProgramDonor(myParent);
+                    break;
+                case "reportgift":
+                    childForm = new ReportsProgramDonor(myParent);
+                    break;
+
+            }
+
+            if (childForm != null)
+            {
+                foreach (Form f in myParent.MdiChildren)
+                {
+                    if (f.GetType() == childForm.GetType())
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+            childForm.MdiParent = myParent;
+            childForm.Show();
+
         }
     }
 }

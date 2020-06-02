@@ -10,27 +10,18 @@ using System.Windows.Forms;
 
 namespace Splash
 {
-    public partial class Volunteers : Form
+    public partial class About : Form
     {
         MainForm myParent;
-
-        public Volunteers()
+        public About()
         {
             InitializeComponent();
         }
 
-        public Volunteers(MainForm p)
+        public About(MainForm p)
         {
             InitializeComponent();
             myParent = p;
         }
-
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Control control = (Control)sender;
-
-            Display.ShowChildForm(control, myParent, this);
-        }
-
     }
 }

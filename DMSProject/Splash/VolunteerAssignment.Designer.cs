@@ -468,12 +468,14 @@
             // 
             this.picBoxVolunteer.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
             this.picBoxVolunteer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.No;
+            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxVolunteer.Location = new System.Drawing.Point(286, 2);
             this.picBoxVolunteer.Name = "picBoxVolunteer";
             this.picBoxVolunteer.Size = new System.Drawing.Size(37, 38);
             this.picBoxVolunteer.TabIndex = 22;
             this.picBoxVolunteer.TabStop = false;
+            this.picBoxVolunteer.Tag = "volunteers";
+            this.picBoxVolunteer.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label20
             // 
@@ -527,11 +529,11 @@
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.label18.Location = new System.Drawing.Point(100, 41);
+            this.label18.Location = new System.Drawing.Point(104, 41);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 13);
+            this.label18.Size = new System.Drawing.Size(40, 13);
             this.label18.TabIndex = 17;
-            this.label18.Text = "Add New";
+            this.label18.Text = "Reports";
             // 
             // picReports
             // 

@@ -24,7 +24,6 @@ C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Pro
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.MainForm.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.Properties.Resources.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.Splash.resources
-C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.Volunteers.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\DonorManagementSystem.csproj.GenerateResource.cache
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\DonorManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.exe
@@ -33,3 +32,5 @@ C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Pro
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteerProgram.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.ReportDonorGift.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.ReportsProgramDonor.resources
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.ReportsHome.resources
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteersHome.resources

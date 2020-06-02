@@ -31,12 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.panelIcons = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
+            this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.picBoxGift = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.picBoxDonor = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.picReports = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.picBoxHome = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelLogout = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -69,26 +76,19 @@
             this.txtGiftId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
-            this.picBoxGift = new System.Windows.Forms.PictureBox();
-            this.picBoxDonor = new System.Windows.Forms.PictureBox();
-            this.picReports = new System.Windows.Forms.PictureBox();
-            this.picBoxHome = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelIcons.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panelGift.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelGift.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panelIcons
@@ -119,6 +119,19 @@
             this.label21.TabIndex = 23;
             this.label21.Text = "Volunteers";
             // 
+            // picBoxVolunteer
+            // 
+            this.picBoxVolunteer.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
+            this.picBoxVolunteer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxVolunteer.Location = new System.Drawing.Point(286, 2);
+            this.picBoxVolunteer.Name = "picBoxVolunteer";
+            this.picBoxVolunteer.Size = new System.Drawing.Size(37, 38);
+            this.picBoxVolunteer.TabIndex = 22;
+            this.picBoxVolunteer.TabStop = false;
+            this.picBoxVolunteer.Tag = "volunteers";
+            this.picBoxVolunteer.Click += new System.EventHandler(this.ShowNewForm);
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -129,6 +142,18 @@
             this.label20.Size = new System.Drawing.Size(28, 13);
             this.label20.TabIndex = 21;
             this.label20.Text = "Gifts";
+            // 
+            // picBoxGift
+            // 
+            this.picBoxGift.BackgroundImage = global::Splash.Properties.Resources.gifticongray;
+            this.picBoxGift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxGift.Cursor = System.Windows.Forms.Cursors.No;
+            this.picBoxGift.Location = new System.Drawing.Point(227, 1);
+            this.picBoxGift.Name = "picBoxGift";
+            this.picBoxGift.Size = new System.Drawing.Size(37, 38);
+            this.picBoxGift.TabIndex = 20;
+            this.picBoxGift.TabStop = false;
+            this.picBoxGift.Tag = "gifts";
             // 
             // label19
             // 
@@ -141,17 +166,45 @@
             this.label19.TabIndex = 19;
             this.label19.Text = "Donors";
             // 
+            // picBoxDonor
+            // 
+            this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
+            this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxDonor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
+            this.picBoxDonor.Name = "picBoxDonor";
+            this.picBoxDonor.Size = new System.Drawing.Size(37, 38);
+            this.picBoxDonor.TabIndex = 18;
+            this.picBoxDonor.TabStop = false;
+            this.picBoxDonor.Tag = "donors";
+            this.picBoxDonor.Click += new System.EventHandler(this.ShowNewForm);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.label18.Location = new System.Drawing.Point(100, 41);
+            this.label18.Location = new System.Drawing.Point(103, 41);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 13);
+            this.label18.Size = new System.Drawing.Size(40, 13);
             this.label18.TabIndex = 17;
-            this.label18.Text = "Add New";
+            this.label18.Tag = "reportshome";
+            this.label18.Text = "Reports";
+            // 
+            // picReports
+            // 
+            this.picReports.BackgroundImage = global::Splash.Properties.Resources.plusicon;
+            this.picReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReports.Image = global::Splash.Properties.Resources.reporticon;
+            this.picReports.Location = new System.Drawing.Point(105, 0);
+            this.picReports.Name = "picReports";
+            this.picReports.Size = new System.Drawing.Size(37, 38);
+            this.picReports.TabIndex = 16;
+            this.picReports.TabStop = false;
+            this.picReports.Tag = "reportshome";
+            this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label17
             // 
@@ -163,6 +216,19 @@
             this.label17.Size = new System.Drawing.Size(33, 13);
             this.label17.TabIndex = 15;
             this.label17.Text = "Home";
+            // 
+            // picBoxHome
+            // 
+            this.picBoxHome.BackgroundImage = global::Splash.Properties.Resources.homeicon37;
+            this.picBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxHome.Location = new System.Drawing.Point(39, 0);
+            this.picBoxHome.Name = "picBoxHome";
+            this.picBoxHome.Size = new System.Drawing.Size(37, 38);
+            this.picBoxHome.TabIndex = 14;
+            this.picBoxHome.TabStop = false;
+            this.picBoxHome.Tag = "home";
+            this.picBoxHome.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // panel1
             // 
@@ -187,6 +253,26 @@
             this.labelLogout.Size = new System.Drawing.Size(47, 14);
             this.labelLogout.TabIndex = 4;
             this.labelLogout.Text = "LogOut";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Splash.Properties.Resources.accounticon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(958, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 37);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBoxLogo
+            // 
+            this.picBoxLogo.BackgroundImage = global::Splash.Properties.Resources.petonly;
+            this.picBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxLogo.Location = new System.Drawing.Point(24, 0);
+            this.picBoxLogo.Name = "picBoxLogo";
+            this.picBoxLogo.Size = new System.Drawing.Size(45, 37);
+            this.picBoxLogo.TabIndex = 1;
+            this.picBoxLogo.TabStop = false;
             // 
             // label1
             // 
@@ -589,90 +675,6 @@
             // 
             this.errProvider.ContainerControl = this;
             // 
-            // picBoxVolunteer
-            // 
-            this.picBoxVolunteer.BackgroundImage = global::Splash.Properties.Resources.volunteericongray;
-            this.picBoxVolunteer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxVolunteer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxVolunteer.Location = new System.Drawing.Point(286, 2);
-            this.picBoxVolunteer.Name = "picBoxVolunteer";
-            this.picBoxVolunteer.Size = new System.Drawing.Size(37, 38);
-            this.picBoxVolunteer.TabIndex = 22;
-            this.picBoxVolunteer.TabStop = false;
-            this.picBoxVolunteer.Tag = "volunteers";
-            this.picBoxVolunteer.Click += new System.EventHandler(this.ShowNewForm);
-            // 
-            // picBoxGift
-            // 
-            this.picBoxGift.BackgroundImage = global::Splash.Properties.Resources.gifticongray;
-            this.picBoxGift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxGift.Cursor = System.Windows.Forms.Cursors.No;
-            this.picBoxGift.Location = new System.Drawing.Point(227, 1);
-            this.picBoxGift.Name = "picBoxGift";
-            this.picBoxGift.Size = new System.Drawing.Size(37, 38);
-            this.picBoxGift.TabIndex = 20;
-            this.picBoxGift.TabStop = false;
-            this.picBoxGift.Tag = "gifts";
-            // 
-            // picBoxDonor
-            // 
-            this.picBoxDonor.BackgroundImage = global::Splash.Properties.Resources.donoricon;
-            this.picBoxDonor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxDonor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxDonor.Location = new System.Drawing.Point(166, 1);
-            this.picBoxDonor.Name = "picBoxDonor";
-            this.picBoxDonor.Size = new System.Drawing.Size(37, 38);
-            this.picBoxDonor.TabIndex = 18;
-            this.picBoxDonor.TabStop = false;
-            this.picBoxDonor.Tag = "donors";
-            this.picBoxDonor.Click += new System.EventHandler(this.ShowNewForm);
-            // 
-            // picReports
-            // 
-            this.picReports.BackgroundImage = global::Splash.Properties.Resources.plusicon;
-            this.picReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picReports.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picReports.Image = global::Splash.Properties.Resources.reporticon;
-            this.picReports.Location = new System.Drawing.Point(105, 0);
-            this.picReports.Name = "picReports";
-            this.picReports.Size = new System.Drawing.Size(37, 38);
-            this.picReports.TabIndex = 16;
-            this.picReports.TabStop = false;
-            this.picReports.Click += new System.EventHandler(this.ShowNewForm);
-            // 
-            // picBoxHome
-            // 
-            this.picBoxHome.BackgroundImage = global::Splash.Properties.Resources.homeicon37;
-            this.picBoxHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxHome.Location = new System.Drawing.Point(39, 0);
-            this.picBoxHome.Name = "picBoxHome";
-            this.picBoxHome.Size = new System.Drawing.Size(37, 38);
-            this.picBoxHome.TabIndex = 14;
-            this.picBoxHome.TabStop = false;
-            this.picBoxHome.Tag = "home";
-            this.picBoxHome.Click += new System.EventHandler(this.ShowNewForm);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Splash.Properties.Resources.accounticon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(958, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 37);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picBoxLogo
-            // 
-            this.picBoxLogo.BackgroundImage = global::Splash.Properties.Resources.petonly;
-            this.picBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxLogo.Location = new System.Drawing.Point(24, 0);
-            this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(45, 37);
-            this.picBoxLogo.TabIndex = 1;
-            this.picBoxLogo.TabStop = false;
-            // 
             // Gift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -689,20 +691,20 @@
             this.Load += new System.EventHandler(this.Gift_Load);
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panelGift.ResumeLayout(false);
-            this.panelGift.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panelGift.ResumeLayout(false);
+            this.panelGift.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
 
         }

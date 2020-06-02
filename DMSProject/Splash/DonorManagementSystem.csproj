@@ -69,6 +69,12 @@
     <Compile Include="ReportDonorGift.Designer.cs">
       <DependentUpon>ReportDonorGift.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportsHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsHome.Designer.cs">
+      <DependentUpon>ReportsHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="UtilityHelper.cs" />
     <Compile Include="Donor.cs">
       <SubType>Form</SubType>
@@ -124,11 +130,11 @@
     <Compile Include="VolunteerProgram.Designer.cs">
       <DependentUpon>VolunteerProgram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Volunteers.cs">
+    <Compile Include="VolunteersHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Volunteers.Designer.cs">
-      <DependentUpon>Volunteers.cs</DependentUpon>
+    <Compile Include="VolunteersHome.Designer.cs">
+      <DependentUpon>VolunteersHome.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportsProgramDonor.cs">
       <SubType>Form</SubType>
@@ -164,6 +170,9 @@
     <EmbeddedResource Include="ReportDonorGift.resx">
       <DependentUpon>ReportDonorGift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsHome.resx">
+      <DependentUpon>ReportsHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,8 +182,8 @@
     <EmbeddedResource Include="VolunteerProgram.resx">
       <DependentUpon>VolunteerProgram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Volunteers.resx">
-      <DependentUpon>Volunteers.cs</DependentUpon>
+    <EmbeddedResource Include="VolunteersHome.resx">
+      <DependentUpon>VolunteersHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsProgramDonor.resx">
       <DependentUpon>ReportsProgramDonor.cs</DependentUpon>
@@ -311,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reporticon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportspic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportspic1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

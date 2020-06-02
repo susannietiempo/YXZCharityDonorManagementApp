@@ -38,15 +38,19 @@
             this.volunteerAssignmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.donorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volunteersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.constituentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addGiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVolunteerHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVolunteerProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVolunteerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
+            this.viewDonorGiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewVolunteerAssignmentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.prgBar = new System.Windows.Forms.ToolStripProgressBar();
@@ -87,41 +91,47 @@
             this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
             this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.toolBarToolStripMenuItem.Text = "&Users";
-            this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.ToolBarToolStripMenuItem_Click);
+            this.toolBarToolStripMenuItem.ToolTipText = "login";
             // 
             // statusBarToolStripMenuItem
             // 
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
             this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.statusBarToolStripMenuItem.Tag = "donors";
             this.statusBarToolStripMenuItem.Text = "&Constituents";
-            this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
+            this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // giftsToolStripMenuItem
             // 
             this.giftsToolStripMenuItem.CheckOnClick = true;
             this.giftsToolStripMenuItem.Name = "giftsToolStripMenuItem";
             this.giftsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.giftsToolStripMenuItem.Tag = "gifts";
             this.giftsToolStripMenuItem.Text = "Gifts";
+            this.giftsToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // volunteerProgramsToolStripMenuItem
             // 
             this.volunteerProgramsToolStripMenuItem.CheckOnClick = true;
             this.volunteerProgramsToolStripMenuItem.Name = "volunteerProgramsToolStripMenuItem";
             this.volunteerProgramsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.volunteerProgramsToolStripMenuItem.Tag = "volunteerprog";
             this.volunteerProgramsToolStripMenuItem.Text = "Volunteer Programs";
+            this.volunteerProgramsToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // volunteerAssignmentsToolStripMenuItem
             // 
             this.volunteerAssignmentsToolStripMenuItem.Name = "volunteerAssignmentsToolStripMenuItem";
             this.volunteerAssignmentsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.volunteerAssignmentsToolStripMenuItem.Tag = "volunteerassn";
             this.volunteerAssignmentsToolStripMenuItem.Text = "Volunteer Assignments";
+            this.volunteerAssignmentsToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // reportsMenu
             // 
             this.reportsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem,
-            this.donorsToolStripMenuItem,
             this.volunteersToolStripMenuItem});
             this.reportsMenu.Name = "reportsMenu";
             this.reportsMenu.Size = new System.Drawing.Size(59, 20);
@@ -130,47 +140,38 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.optionsToolStripMenuItem.Text = "&Gifts";
-            // 
-            // donorsToolStripMenuItem
-            // 
-            this.donorsToolStripMenuItem.Name = "donorsToolStripMenuItem";
-            this.donorsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.donorsToolStripMenuItem.Text = "Donors";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.optionsToolStripMenuItem.Tag = "reportgift";
+            this.optionsToolStripMenuItem.Text = "&Gifts - Donor";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // volunteersToolStripMenuItem
             // 
             this.volunteersToolStripMenuItem.Name = "volunteersToolStripMenuItem";
-            this.volunteersToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.volunteersToolStripMenuItem.Text = "Volunteers";
+            this.volunteersToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.volunteersToolStripMenuItem.Tag = "reportassn";
+            this.volunteersToolStripMenuItem.Text = "Volunteer Assignment";
+            this.volunteersToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // helpMenu
             // 
             this.helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator8,
-            this.aboutToolStripMenuItem});
+            this.toolStripSeparator8});
             this.helpMenu.Name = "helpMenu";
             this.helpMenu.Size = new System.Drawing.Size(52, 20);
             this.helpMenu.Text = "&About";
+            this.helpMenu.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(104, 6);
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "&About";
-            // 
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
             this.toolStripSplitButton2,
-            this.toolStripSplitButton3,
             this.toolStripButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
@@ -181,29 +182,83 @@
             // toolStripSplitButton1
             // 
             this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.constituentToolStripMenuItem,
+            this.addGiftToolStripMenuItem,
+            this.addVolunteerHoursToolStripMenuItem,
+            this.addVolunteerProgramToolStripMenuItem,
+            this.addVolunteerToolStripMenuItem});
             this.toolStripSplitButton1.Image = global::Splash.Properties.Resources.plusicon20blue;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 22);
             this.toolStripSplitButton1.Text = "toolStripSplitButton1";
             // 
+            // constituentToolStripMenuItem
+            // 
+            this.constituentToolStripMenuItem.Name = "constituentToolStripMenuItem";
+            this.constituentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.constituentToolStripMenuItem.Tag = "donors";
+            this.constituentToolStripMenuItem.Text = "Add Constituent";
+            this.constituentToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            // 
+            // addGiftToolStripMenuItem
+            // 
+            this.addGiftToolStripMenuItem.Name = "addGiftToolStripMenuItem";
+            this.addGiftToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.addGiftToolStripMenuItem.Tag = "gifts";
+            this.addGiftToolStripMenuItem.Text = "Add Gift";
+            this.addGiftToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            // 
+            // addVolunteerHoursToolStripMenuItem
+            // 
+            this.addVolunteerHoursToolStripMenuItem.Name = "addVolunteerHoursToolStripMenuItem";
+            this.addVolunteerHoursToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.addVolunteerHoursToolStripMenuItem.Tag = "volunteerassn";
+            this.addVolunteerHoursToolStripMenuItem.Text = "Add Volunteer Hours";
+            this.addVolunteerHoursToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            // 
+            // addVolunteerProgramToolStripMenuItem
+            // 
+            this.addVolunteerProgramToolStripMenuItem.Name = "addVolunteerProgramToolStripMenuItem";
+            this.addVolunteerProgramToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.addVolunteerProgramToolStripMenuItem.Tag = "volunteerprog";
+            this.addVolunteerProgramToolStripMenuItem.Text = "Add Volunteer Program";
+            this.addVolunteerProgramToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            // 
+            // addVolunteerToolStripMenuItem
+            // 
+            this.addVolunteerToolStripMenuItem.Name = "addVolunteerToolStripMenuItem";
+            this.addVolunteerToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.addVolunteerToolStripMenuItem.Tag = "volunteerassn";
+            this.addVolunteerToolStripMenuItem.Text = "Add Volunteer";
+            this.addVolunteerToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            // 
             // toolStripSplitButton2
             // 
             this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewDonorGiftToolStripMenuItem,
+            this.viewVolunteerAssignmentReportToolStripMenuItem});
             this.toolStripSplitButton2.Image = global::Splash.Properties.Resources.report20;
             this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton2.Name = "toolStripSplitButton2";
             this.toolStripSplitButton2.Size = new System.Drawing.Size(32, 22);
             this.toolStripSplitButton2.Text = "toolStripSplitButton2";
             // 
-            // toolStripSplitButton3
+            // viewDonorGiftToolStripMenuItem
             // 
-            this.toolStripSplitButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton3.Image = global::Splash.Properties.Resources.search20;
-            this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton3.Name = "toolStripSplitButton3";
-            this.toolStripSplitButton3.Size = new System.Drawing.Size(32, 22);
-            this.toolStripSplitButton3.Text = "toolStripSplitButton3";
+            this.viewDonorGiftToolStripMenuItem.Name = "viewDonorGiftToolStripMenuItem";
+            this.viewDonorGiftToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.viewDonorGiftToolStripMenuItem.Text = "View Donor - Gift Report";
+            this.viewDonorGiftToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
+            // 
+            // viewVolunteerAssignmentReportToolStripMenuItem
+            // 
+            this.viewVolunteerAssignmentReportToolStripMenuItem.Name = "viewVolunteerAssignmentReportToolStripMenuItem";
+            this.viewVolunteerAssignmentReportToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.viewVolunteerAssignmentReportToolStripMenuItem.Text = "View Volunteer Assignment Report";
+            this.viewVolunteerAssignmentReportToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // toolStripButton1
             // 
@@ -212,7 +267,9 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Tag = "about";
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // statusStrip
             // 
@@ -267,7 +324,6 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMenu;
         private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
@@ -281,12 +337,17 @@
         internal System.Windows.Forms.ToolStripProgressBar prgBar;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton3;
         private System.Windows.Forms.ToolStripMenuItem giftsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem volunteerProgramsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem volunteerAssignmentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem donorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem volunteersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem constituentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addGiftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addVolunteerHoursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addVolunteerProgramToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addVolunteerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewDonorGiftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewVolunteerAssignmentReportToolStripMenuItem;
     }
 }
 

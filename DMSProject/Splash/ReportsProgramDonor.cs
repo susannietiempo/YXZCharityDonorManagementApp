@@ -33,9 +33,17 @@ namespace Splash
         #region Events
         private void ReportsProgramDonor_Load(object sender, EventArgs e)
         {
-            LoadProgram();
-            LoadVolunteerName();
-            LoadAccountInfo();
+            try
+            {
+                LoadProgram();
+                LoadVolunteerName();
+                LoadAccountInfo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+
         }
 
         /// <summary>
@@ -89,7 +97,7 @@ namespace Splash
 
         }
 
-        private void cboConstituencyType_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cboProgram_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
             {
@@ -99,8 +107,17 @@ namespace Splash
                     string type = cboProgram.Text;
                     LoadDonorName(id, type);
 
-                    string sql = $"SELECT AccountId, KeyName, StreetAddress, City, Province, Country FROM Account WHERE ConstituencyTypeId = {id}";
+                    string sql = $@"SELECT AccountId, KeyName, StreetAddress, City, Province, Country 
+                                          FROM Account 
+                                          WHERE AccountId IN 
+                                             (SELECT AccountId FROM VolunteerAssignment 
+                                             WHERE ProgramId = { id}) 
+                                          ORDER BY KeyName";
+
+                    sql = DataAccess.SQLCleaner(sql);
                     dgvVolunteers.DataSource = DataAccess.GetData(sql);
+                    dgvVolunteers.AutoResizeColumns();
+                    dgvVolunteers.Columns[0].Visible = false;
 
                     txtVolCount.Text = dgvVolunteers.RowCount.ToString();
                 }
@@ -140,7 +157,20 @@ namespace Splash
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                LoadProgram();
+                LoadVolunteerName();
+                LoadAccountInfo();
+                txtDonorName.Text = null;
+                txtRemainingHours.Text = null;
+                txtTotalHours.Text = null;
+                txtVolHours.Text = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
         }
 
         #endregion
@@ -149,18 +179,18 @@ namespace Splash
         private void LoadProgram()
         {
             DataTable dt = DataAccess.GetData("SELECT ProgramId, ProgramName  FROM VolunteerProgram ORDER BY ProgramName");
-            UIUtilities.FillListControl(cboProgram, "ProgramName", "ProgramId", dt, true, "-- All constituency type --");
+            UIUtilities.FillListControl(cboProgram, "ProgramName", "ProgramId", dt, true, "-- All programs --"); //good
         }
 
         private void LoadVolunteerName()
         {
             DataTable dt = DataAccess.GetData("SELECT DISTINCT Account.AccountId, KeyName   FROM Account INNER JOIN VolunteerAssignment On Account.AccountId  = VolunteerAssignment.AccountId  ORDER BY KeyName");
-            UIUtilities.FillListControl(cboVolName, "KeyName", "AccountId", dt, true, "-- All volunteers --");
+            UIUtilities.FillListControl(cboVolName, "KeyName", "AccountId", dt, true, "-- All volunteers --"); //good
         }
         private void LoadDonorName(int id, string type)
         {
-            DataTable dt = DataAccess.GetData($"SELECT AccountId, KeyName  FROM Account WHERE ConstituencyTypeId = {id} ORDER BY KeyName ");
-            UIUtilities.FillListControl(cboVolName, "KeyName", "AccountId", dt, true, $"-- All {type} donors --");
+            DataTable dt = DataAccess.GetData($"SELECT DISTINCT Account.AccountId, KeyName   FROM Account INNER JOIN VolunteerAssignment On Account.AccountId  = VolunteerAssignment.AccountId  AND ProgramId = {id} ORDER BY KeyName ");
+            UIUtilities.FillListControl(cboVolName, "KeyName", "AccountId", dt, true, $"-- All {type} volunteers --");
         }
 
         private void LoadAccountInfo()

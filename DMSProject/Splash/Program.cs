@@ -16,7 +16,7 @@ namespace Splash
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReportsProgramDonor());
+            Application.Run(new MainForm());
         }
     }
 }

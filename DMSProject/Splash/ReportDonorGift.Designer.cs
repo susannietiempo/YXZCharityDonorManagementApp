@@ -39,6 +39,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
             this.panelGift = new System.Windows.Forms.Panel();
+            this.txtDonorCount = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtRecentGift = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTotalGiftNum = new System.Windows.Forms.TextBox();
@@ -73,9 +76,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDonorCount = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelGift.SuspendLayout();
@@ -156,6 +156,40 @@
             this.panelGift.Name = "panelGift";
             this.panelGift.Size = new System.Drawing.Size(1089, 471);
             this.panelGift.TabIndex = 3;
+            // 
+            // txtDonorCount
+            // 
+            this.txtDonorCount.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonorCount.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtDonorCount.Location = new System.Drawing.Point(100, 166);
+            this.txtDonorCount.Name = "txtDonorCount";
+            this.txtDonorCount.Size = new System.Drawing.Size(56, 21);
+            this.txtDonorCount.TabIndex = 61;
+            this.txtDonorCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.label13.Location = new System.Drawing.Point(29, 173);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 60;
+            this.label13.Text = "Donor Count";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label12.Location = new System.Drawing.Point(813, 200);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(102, 13);
+            this.label12.TabIndex = 59;
+            this.label12.Text = "GIVING SUMMARY";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtRecentGift
             // 
@@ -516,6 +550,7 @@
             this.picReports.Size = new System.Drawing.Size(37, 38);
             this.picReports.TabIndex = 16;
             this.picReports.TabStop = false;
+            this.picReports.Tag = "reportshome";
             this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label17
@@ -597,40 +632,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "XYZ Charity";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label12.Location = new System.Drawing.Point(813, 200);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 13);
-            this.label12.TabIndex = 59;
-            this.label12.Text = "GIVING SUMMARY";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtDonorCount
-            // 
-            this.txtDonorCount.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonorCount.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtDonorCount.Location = new System.Drawing.Point(100, 166);
-            this.txtDonorCount.Name = "txtDonorCount";
-            this.txtDonorCount.Size = new System.Drawing.Size(56, 21);
-            this.txtDonorCount.TabIndex = 61;
-            this.txtDonorCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label13.Location = new System.Drawing.Point(29, 173);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 13);
-            this.label13.TabIndex = 60;
-            this.label13.Text = "Donor Count";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ReportDonorGift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,7 +643,8 @@
             this.Controls.Add(this.panel2);
             this.Name = "ReportDonorGift";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReportsHomecs";
+            this.Tag = "reportgift";
+            this.Text = "Donor - Gift View";
             this.Load += new System.EventHandler(this.ReportsHome_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

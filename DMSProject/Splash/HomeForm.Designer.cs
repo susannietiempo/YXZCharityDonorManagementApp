@@ -219,6 +219,7 @@
             this.picReports.Size = new System.Drawing.Size(37, 38);
             this.picReports.TabIndex = 16;
             this.picReports.TabStop = false;
+            this.picReports.Tag = "reportshome";
             this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label13
