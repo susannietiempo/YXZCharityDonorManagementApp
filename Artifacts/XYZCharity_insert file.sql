@@ -15,7 +15,7 @@ SELECT TOP(10) KeyName, GiftDate, ReceivedAmount FROM Gift INNER JOIN Account ON
  EXEC sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT all'
  EXEC sp_msforeachtable 'ALTER TABLE ? CHECK CONSTRAINT all'
 
- Insert into VolunteerAssignment (ProgramId, AccountId,HoursCompleted,HoursSignedUp)
+ Insert into VolunteerAssignment (ProgramId, AccountId, HoursSignedUp, HoursCompleted)
  Values
  (2, 6, 5, 5),
 (2, 7, 6, 6),
@@ -44,3 +44,5 @@ SELECT TOP(10) KeyName, GiftDate, ReceivedAmount FROM Gift INNER JOIN Account ON
 (7, 6, 20, 20),
 (7, 16, 10, 5),
 (7, 15, 10, 5)
+
+Delete FROM  VolunteerAssignment

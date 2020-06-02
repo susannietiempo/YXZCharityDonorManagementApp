@@ -31,3 +31,5 @@ C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Pro
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.pdb
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteerAssignment.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteerProgram.resources
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.ReportDonorGift.resources
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.ReportsProgramDonor.resources

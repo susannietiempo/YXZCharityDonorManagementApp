@@ -37,7 +37,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.picBoxDonors = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.picBoxAdd = new System.Windows.Forms.PictureBox();
+            this.picReports = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
             this.picBoxSearch = new System.Windows.Forms.PictureBox();
@@ -79,7 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGifts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.panel4.SuspendLayout();
@@ -116,7 +116,7 @@
             this.panelIcons.Controls.Add(this.label9);
             this.panelIcons.Controls.Add(this.picBoxDonors);
             this.panelIcons.Controls.Add(this.label10);
-            this.panelIcons.Controls.Add(this.picBoxAdd);
+            this.panelIcons.Controls.Add(this.picReports);
             this.panelIcons.Controls.Add(this.label13);
             this.panelIcons.Controls.Add(this.picBoxHome);
             this.panelIcons.Location = new System.Drawing.Point(402, 41);
@@ -202,22 +202,24 @@
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.label10.Location = new System.Drawing.Point(100, 41);
+            this.label10.Location = new System.Drawing.Point(106, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 17;
-            this.label10.Text = "Add New";
+            this.label10.Text = "Report";
             // 
-            // picBoxAdd
+            // picReports
             // 
-            this.picBoxAdd.BackgroundImage = global::Splash.Properties.Resources.plusicon;
-            this.picBoxAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxAdd.Location = new System.Drawing.Point(105, 0);
-            this.picBoxAdd.Name = "picBoxAdd";
-            this.picBoxAdd.Size = new System.Drawing.Size(37, 38);
-            this.picBoxAdd.TabIndex = 16;
-            this.picBoxAdd.TabStop = false;
+            this.picReports.BackgroundImage = global::Splash.Properties.Resources.plusicon;
+            this.picReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReports.Image = global::Splash.Properties.Resources.reporticon;
+            this.picReports.Location = new System.Drawing.Point(105, 0);
+            this.picReports.Name = "picReports";
+            this.picReports.Size = new System.Drawing.Size(37, 38);
+            this.picReports.TabIndex = 16;
+            this.picReports.TabStop = false;
+            this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label13
             // 
@@ -634,7 +636,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGifts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -669,7 +671,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox picBoxDonors;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox picBoxAdd;
+        private System.Windows.Forms.PictureBox picReports;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox picBoxHome;
         private System.Windows.Forms.PictureBox picBoxSearch;

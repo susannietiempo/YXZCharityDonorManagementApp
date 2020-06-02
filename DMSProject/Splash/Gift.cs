@@ -324,7 +324,6 @@ namespace Splash
             UIUtilities.FillListControl(cboDonorName, "KeyName", "AccountId", dt, true, "--Select a donor--");
         }
 
-
         /// <summary>
         /// Load the first gift in the table. Ordering the gifts by giftdate
         /// </summary>

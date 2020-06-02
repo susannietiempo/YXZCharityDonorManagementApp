@@ -39,7 +39,13 @@
             this.labelLogout = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSaveDelete = new System.Windows.Forms.Button();
             this.panelGift = new System.Windows.Forms.Panel();
+            this.cboDonorName = new System.Windows.Forms.ComboBox();
             this.txtGiftNote = new System.Windows.Forms.TextBox();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -62,30 +68,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtGiftId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSaveDelete = new System.Windows.Forms.Button();
-            this.cboDonorName = new System.Windows.Forms.ComboBox();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
             this.picBoxGift = new System.Windows.Forms.PictureBox();
             this.picBoxDonor = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picReports = new System.Windows.Forms.PictureBox();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelIcons.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelGift.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelGift.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
@@ -100,7 +100,7 @@
             this.panelIcons.Controls.Add(this.label19);
             this.panelIcons.Controls.Add(this.picBoxDonor);
             this.panelIcons.Controls.Add(this.label18);
-            this.panelIcons.Controls.Add(this.pictureBox3);
+            this.panelIcons.Controls.Add(this.picReports);
             this.panelIcons.Controls.Add(this.label17);
             this.panelIcons.Controls.Add(this.picBoxHome);
             this.panelIcons.Location = new System.Drawing.Point(387, 38);
@@ -210,6 +210,79 @@
             this.panel2.TabIndex = 8;
             this.panel2.TabStop = true;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Controls.Add(this.btnEdit);
+            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.btnSaveDelete);
+            this.panel3.Location = new System.Drawing.Point(3, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1123, 33);
+            this.panel3.TabIndex = 4;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnAdd.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(40, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 27);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(129, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 27);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnCancel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(1004, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 27);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSaveDelete
+            // 
+            this.btnSaveDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnSaveDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveDelete.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveDelete.ForeColor = System.Drawing.Color.White;
+            this.btnSaveDelete.Location = new System.Drawing.Point(914, 3);
+            this.btnSaveDelete.Name = "btnSaveDelete";
+            this.btnSaveDelete.Size = new System.Drawing.Size(75, 27);
+            this.btnSaveDelete.TabIndex = 3;
+            this.btnSaveDelete.Text = "Delete";
+            this.btnSaveDelete.UseVisualStyleBackColor = false;
+            this.btnSaveDelete.Click += new System.EventHandler(this.btnSaveDelete_Click);
+            // 
             // panelGift
             // 
             this.panelGift.BackColor = System.Drawing.Color.White;
@@ -240,6 +313,16 @@
             this.panelGift.Name = "panelGift";
             this.panelGift.Size = new System.Drawing.Size(1089, 471);
             this.panelGift.TabIndex = 3;
+            // 
+            // cboDonorName
+            // 
+            this.cboDonorName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboDonorName.FormattingEnabled = true;
+            this.cboDonorName.Location = new System.Drawing.Point(221, 133);
+            this.cboDonorName.Name = "cboDonorName";
+            this.cboDonorName.Size = new System.Drawing.Size(204, 21);
+            this.cboDonorName.TabIndex = 44;
+            this.cboDonorName.SelectedIndexChanged += new System.EventHandler(this.cboDonorName_SelectedIndexChanged);
             // 
             // txtGiftNote
             // 
@@ -502,89 +585,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Gift Details";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.btnAdd);
-            this.panel3.Controls.Add(this.btnEdit);
-            this.panel3.Controls.Add(this.btnCancel);
-            this.panel3.Controls.Add(this.btnSaveDelete);
-            this.panel3.Location = new System.Drawing.Point(3, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1123, 33);
-            this.panel3.TabIndex = 4;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnAdd.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(40, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 27);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(129, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 27);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Gray;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnCancel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(1004, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 27);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSaveDelete
-            // 
-            this.btnSaveDelete.BackColor = System.Drawing.Color.IndianRed;
-            this.btnSaveDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveDelete.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveDelete.ForeColor = System.Drawing.Color.White;
-            this.btnSaveDelete.Location = new System.Drawing.Point(914, 3);
-            this.btnSaveDelete.Name = "btnSaveDelete";
-            this.btnSaveDelete.Size = new System.Drawing.Size(75, 27);
-            this.btnSaveDelete.TabIndex = 3;
-            this.btnSaveDelete.Text = "Delete";
-            this.btnSaveDelete.UseVisualStyleBackColor = false;
-            this.btnSaveDelete.Click += new System.EventHandler(this.btnSaveDelete_Click);
-            // 
-            // cboDonorName
-            // 
-            this.cboDonorName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboDonorName.FormattingEnabled = true;
-            this.cboDonorName.Location = new System.Drawing.Point(221, 133);
-            this.cboDonorName.Name = "cboDonorName";
-            this.cboDonorName.Size = new System.Drawing.Size(204, 21);
-            this.cboDonorName.TabIndex = 44;
-            this.cboDonorName.SelectedIndexChanged += new System.EventHandler(this.cboDonorName_SelectedIndexChanged);
-            // 
             // errProvider
             // 
             this.errProvider.ContainerControl = this;
@@ -627,16 +627,18 @@
             this.picBoxDonor.Tag = "donors";
             this.picBoxDonor.Click += new System.EventHandler(this.ShowNewForm);
             // 
-            // pictureBox3
+            // picReports
             // 
-            this.pictureBox3.BackgroundImage = global::Splash.Properties.Resources.plusicon;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(105, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
+            this.picReports.BackgroundImage = global::Splash.Properties.Resources.plusicon;
+            this.picReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReports.Image = global::Splash.Properties.Resources.reporticon;
+            this.picReports.Location = new System.Drawing.Point(105, 0);
+            this.picReports.Name = "picReports";
+            this.picReports.Size = new System.Drawing.Size(37, 38);
+            this.picReports.TabIndex = 16;
+            this.picReports.TabStop = false;
+            this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // picBoxHome
             // 
@@ -690,14 +692,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panelGift.ResumeLayout(false);
             this.panelGift.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
@@ -715,7 +717,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox picBoxDonor;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picReports;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox picBoxHome;
         private System.Windows.Forms.Panel panel1;

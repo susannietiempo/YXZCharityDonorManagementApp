@@ -65,7 +65,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.picBoxDonor = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picReports = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -78,7 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             this.SuspendLayout();
             // 
@@ -445,7 +445,7 @@
             this.panelIcons.Controls.Add(this.label19);
             this.panelIcons.Controls.Add(this.picBoxDonor);
             this.panelIcons.Controls.Add(this.label18);
-            this.panelIcons.Controls.Add(this.pictureBox3);
+            this.panelIcons.Controls.Add(this.picReports);
             this.panelIcons.Controls.Add(this.label17);
             this.panelIcons.Controls.Add(this.picBoxHome);
             this.panelIcons.Location = new System.Drawing.Point(372, 38);
@@ -533,16 +533,18 @@
             this.label18.TabIndex = 17;
             this.label18.Text = "Add New";
             // 
-            // pictureBox3
+            // picReports
             // 
-            this.pictureBox3.BackgroundImage = global::Splash.Properties.Resources.plusicon;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(105, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
+            this.picReports.BackgroundImage = global::Splash.Properties.Resources.plusicon;
+            this.picReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReports.Image = global::Splash.Properties.Resources.reporticon;
+            this.picReports.Location = new System.Drawing.Point(105, 0);
+            this.picReports.Name = "picReports";
+            this.picReports.Size = new System.Drawing.Size(37, 38);
+            this.picReports.TabIndex = 16;
+            this.picReports.TabStop = false;
+            this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // label17
             // 
@@ -593,7 +595,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             this.ResumeLayout(false);
 
@@ -638,7 +640,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox picBoxDonor;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picReports;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox picBoxHome;
     }

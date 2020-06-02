@@ -33,25 +33,25 @@
             this.manageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.volunteerProgramsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.volunteerAssignmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.volunteersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.prgBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
-            this.giftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.volunteerProgramsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.volunteerAssignmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.donorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.volunteersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -83,9 +83,7 @@
             // 
             // toolBarToolStripMenuItem
             // 
-            this.toolBarToolStripMenuItem.Checked = true;
             this.toolBarToolStripMenuItem.CheckOnClick = true;
-            this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
             this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.toolBarToolStripMenuItem.Text = "&Users";
@@ -93,13 +91,31 @@
             // 
             // statusBarToolStripMenuItem
             // 
-            this.statusBarToolStripMenuItem.Checked = true;
             this.statusBarToolStripMenuItem.CheckOnClick = true;
-            this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
             this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.statusBarToolStripMenuItem.Text = "&Constituents";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
+            // 
+            // giftsToolStripMenuItem
+            // 
+            this.giftsToolStripMenuItem.CheckOnClick = true;
+            this.giftsToolStripMenuItem.Name = "giftsToolStripMenuItem";
+            this.giftsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.giftsToolStripMenuItem.Text = "Gifts";
+            // 
+            // volunteerProgramsToolStripMenuItem
+            // 
+            this.volunteerProgramsToolStripMenuItem.CheckOnClick = true;
+            this.volunteerProgramsToolStripMenuItem.Name = "volunteerProgramsToolStripMenuItem";
+            this.volunteerProgramsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.volunteerProgramsToolStripMenuItem.Text = "Volunteer Programs";
+            // 
+            // volunteerAssignmentsToolStripMenuItem
+            // 
+            this.volunteerAssignmentsToolStripMenuItem.Name = "volunteerAssignmentsToolStripMenuItem";
+            this.volunteerAssignmentsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.volunteerAssignmentsToolStripMenuItem.Text = "Volunteer Assignments";
             // 
             // reportsMenu
             // 
@@ -114,8 +130,20 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.optionsToolStripMenuItem.Text = "&Gifts";
+            // 
+            // donorsToolStripMenuItem
+            // 
+            this.donorsToolStripMenuItem.Name = "donorsToolStripMenuItem";
+            this.donorsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.donorsToolStripMenuItem.Text = "Donors";
+            // 
+            // volunteersToolStripMenuItem
+            // 
+            this.volunteersToolStripMenuItem.Name = "volunteersToolStripMenuItem";
+            this.volunteersToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.volunteersToolStripMenuItem.Text = "Volunteers";
             // 
             // helpMenu
             // 
@@ -129,12 +157,12 @@
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(104, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             // 
             // toolStrip
@@ -149,37 +177,6 @@
             this.toolStrip.Size = new System.Drawing.Size(1133, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prgBar,
-            this.toolStripStatusLabel1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 709);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1133, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // prgBar
-            // 
-            this.prgBar.Name = "prgBar";
-            this.prgBar.Size = new System.Drawing.Size(100, 16);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel1.Text = "Status";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Splash.Properties.Resources.question20xblue;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripSplitButton1
             // 
@@ -208,41 +205,36 @@
             this.toolStripSplitButton3.Size = new System.Drawing.Size(32, 22);
             this.toolStripSplitButton3.Text = "toolStripSplitButton3";
             // 
-            // giftsToolStripMenuItem
+            // toolStripButton1
             // 
-            this.giftsToolStripMenuItem.Checked = true;
-            this.giftsToolStripMenuItem.CheckOnClick = true;
-            this.giftsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.giftsToolStripMenuItem.Name = "giftsToolStripMenuItem";
-            this.giftsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.giftsToolStripMenuItem.Text = "Gifts";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Splash.Properties.Resources.question20xblue;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // volunteerProgramsToolStripMenuItem
+            // statusStrip
             // 
-            this.volunteerProgramsToolStripMenuItem.Checked = true;
-            this.volunteerProgramsToolStripMenuItem.CheckOnClick = true;
-            this.volunteerProgramsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.volunteerProgramsToolStripMenuItem.Name = "volunteerProgramsToolStripMenuItem";
-            this.volunteerProgramsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.volunteerProgramsToolStripMenuItem.Text = "Volunteer Programs";
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prgBar,
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 709);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(1133, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
             // 
-            // volunteerAssignmentsToolStripMenuItem
+            // prgBar
             // 
-            this.volunteerAssignmentsToolStripMenuItem.Name = "volunteerAssignmentsToolStripMenuItem";
-            this.volunteerAssignmentsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.volunteerAssignmentsToolStripMenuItem.Text = "Volunteer Assignments";
+            this.prgBar.Name = "prgBar";
+            this.prgBar.Size = new System.Drawing.Size(100, 16);
             // 
-            // donorsToolStripMenuItem
+            // toolStripStatusLabel1
             // 
-            this.donorsToolStripMenuItem.Name = "donorsToolStripMenuItem";
-            this.donorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.donorsToolStripMenuItem.Text = "Donors";
-            // 
-            // volunteersToolStripMenuItem
-            // 
-            this.volunteersToolStripMenuItem.Name = "volunteersToolStripMenuItem";
-            this.volunteersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.volunteersToolStripMenuItem.Text = "Volunteers";
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel1.Text = "Status";
             // 
             // MainForm
             // 

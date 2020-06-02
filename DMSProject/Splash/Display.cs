@@ -39,6 +39,9 @@ namespace Splash
                 case "volunteerprog":
                     childForm = new VolunteerProgram(myParent);
                     break;
+                case "reports":
+                    childForm = new VolunteerProgram(myParent);
+                    break;
             }
 
             if (childForm != null)

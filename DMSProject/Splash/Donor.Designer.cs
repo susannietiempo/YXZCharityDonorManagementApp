@@ -92,7 +92,7 @@
             this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.picBoxDonor = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picReports = new System.Windows.Forms.PictureBox();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
@@ -105,7 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
@@ -701,7 +701,7 @@
             this.panelIcons.Controls.Add(this.label19);
             this.panelIcons.Controls.Add(this.picBoxDonor);
             this.panelIcons.Controls.Add(this.label18);
-            this.panelIcons.Controls.Add(this.pictureBox3);
+            this.panelIcons.Controls.Add(this.picReports);
             this.panelIcons.Controls.Add(this.label17);
             this.panelIcons.Controls.Add(this.picBoxHome);
             this.panelIcons.Location = new System.Drawing.Point(381, 37);
@@ -748,11 +748,12 @@
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.label18.Location = new System.Drawing.Point(100, 41);
+            this.label18.Location = new System.Drawing.Point(102, 41);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 13);
+            this.label18.Size = new System.Drawing.Size(40, 13);
             this.label18.TabIndex = 17;
-            this.label18.Text = "Add New";
+            this.label18.Tag = "report";
+            this.label18.Text = "Reports";
             // 
             // label17
             // 
@@ -880,16 +881,18 @@
             this.picBoxDonor.TabStop = false;
             this.picBoxDonor.Tag = "donors";
             // 
-            // pictureBox3
+            // picReports
             // 
-            this.pictureBox3.BackgroundImage = global::Splash.Properties.Resources.plusicon;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(105, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 38);
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
+            this.picReports.BackgroundImage = global::Splash.Properties.Resources.plusicon;
+            this.picReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReports.Image = global::Splash.Properties.Resources.reporticon;
+            this.picReports.Location = new System.Drawing.Point(105, 0);
+            this.picReports.Name = "picReports";
+            this.picReports.Size = new System.Drawing.Size(37, 38);
+            this.picReports.TabIndex = 16;
+            this.picReports.TabStop = false;
+            this.picReports.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // picBoxHome
             // 
@@ -950,7 +953,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
@@ -974,7 +977,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox picBoxDonor;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picReports;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox picBoxHome;
         private System.Windows.Forms.Button btnSaveDelete;
