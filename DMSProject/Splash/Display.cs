@@ -49,7 +49,7 @@ namespace Splash
                     childForm = new ReportsProgramDonor(myParent);
                     break;
                 case "reportgift":
-                    childForm = new ReportsProgramDonor(myParent);
+                    childForm = new ReportDonorGift(myParent);
                     break;
 
             }
@@ -107,6 +107,12 @@ namespace Splash
                 case "reportgift":
                     childForm = new ReportsProgramDonor(myParent);
                     break;
+                case "about":
+                    childForm = new About(myParent);
+                    break;
+                case "users":
+                    childForm = new Users(myParent);
+                    break; 
 
             }
 

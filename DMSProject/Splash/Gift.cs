@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -258,7 +259,7 @@ namespace Splash
                 
                 if (txt.Name == "txtReceivedAmount")
                 {
-                    if (!IsNumeric(txt.Text))
+                    if (!IsNumeric(decimal.Parse(txt.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.Number).ToString()))
                     {
                         errMsg = $"{txtBoxName} is not numeric ";
                         e.Cancel = true;

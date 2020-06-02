@@ -573,6 +573,7 @@
             this.txtOrgName.Size = new System.Drawing.Size(204, 22);
             this.txtOrgName.TabIndex = 7;
             this.txtOrgName.Tag = "Organization Name";
+            this.txtOrgName.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // label8
             // 

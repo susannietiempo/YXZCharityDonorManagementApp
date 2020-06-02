@@ -95,7 +95,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Roboto", 22F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label12.ForeColor = System.Drawing.Color.SeaGreen;
             this.label12.Location = new System.Drawing.Point(683, 54);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(212, 37);
@@ -113,7 +113,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(64)))), ((int)(((byte)(145)))));
+            this.button3.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,7 +129,7 @@
             // 
             // btnDonorGift
             // 
-            this.btnDonorGift.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDonorGift.BackColor = System.Drawing.Color.SeaGreen;
             this.btnDonorGift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDonorGift.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDonorGift.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

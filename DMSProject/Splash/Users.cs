@@ -12,9 +12,16 @@ namespace Splash
 {
     public partial class Users : Form
     {
+        MainForm myParent;
         public Users()
         {
             InitializeComponent();
+        }
+
+        public Users(MainForm p)
+        {
+            InitializeComponent();
+            myParent = p;
         }
     }
 }
