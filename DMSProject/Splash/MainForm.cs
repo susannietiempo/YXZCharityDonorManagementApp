@@ -69,6 +69,20 @@ namespace Splash
             }
         }
 
+        private void ShowNewFormToolBtn(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripButton stripButton = (ToolStripButton)sender;
+                Display.ShowChildForm(stripButton, this);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+
 
     }
 

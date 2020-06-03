@@ -72,6 +72,7 @@ namespace Splash
         {
             try
             {
+                errProvider.Clear();
                 btnCancel.Cursor = Cursors.Hand;
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
@@ -101,6 +102,7 @@ namespace Splash
         {
             try
             {
+                errProvider.Clear();
                 btnCancel.Cursor = Cursors.Hand;
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
@@ -112,6 +114,7 @@ namespace Splash
                 cboDonorName.Focus();
                 UtilityHelper.ToolStripDisplay(myParent, "Edit Gift...", Color.Black);
                 UtilityHelper.ControlState(panelGift.Controls, false);
+                errProvider.Clear();
             }
             catch (Exception ex)
             {
@@ -155,6 +158,8 @@ namespace Splash
                         }
                     }
                 }
+
+                errProvider.Clear();
             }
             catch (Exception ex)
             {
@@ -183,6 +188,7 @@ namespace Splash
                     btnEdit.Visible = true;
                     btnSaveDelete.Text = "Delete";
                     btnSaveDelete.BackColor = Color.IndianRed;
+                    errProvider.Clear();
                 }
             }
             catch (Exception ex)

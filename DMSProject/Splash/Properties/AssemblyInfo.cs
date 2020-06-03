@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Donor Management System")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This application is a help XYZ charity in organizing and maintaning their donor, gift and volunteer base.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("XYZ Charity")]
 [assembly: AssemblyProduct("Donor Management System")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright ©  2020 - 2156 XYZ Charity")]
+[assembly: AssemblyTrademark("Donor Management System are trademarks of XYZ Charity,")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

@@ -23,5 +23,22 @@ namespace Splash
             InitializeComponent();
             myParent = p;
         }
+
+        private void About_Load(object sender, EventArgs e)
+        {
+            AssemblyInformation info = new AssemblyInformation();
+
+            txtTitle.Text = info.Title;
+            txtDescription.Text = info.Description;
+            txtCompany.Text = info.Company;
+            txtProduct.Text = info.Product;
+            txtCopyright.Text = info.Copyright;
+            txtTrademark.Text = info.Trademark;
+            txtAssembly.Text = info.AssemblyVersion;
+            txtFileVersion.Text = info.FileVersion;
+            txtGUID.Text = info.Guid;
+            txtNueutral.Text = info.NeutralLanguage;
+            txtCOMVisible.Text = info.IsComVisible.ToString();
+        }
     }
 }

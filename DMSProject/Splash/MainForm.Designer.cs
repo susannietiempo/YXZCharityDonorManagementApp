@@ -42,10 +42,6 @@
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.prgBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.constituentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addGiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +52,11 @@
             this.viewDonorGiftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewVolunteerAssignmentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.prgBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.aboutAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -157,16 +158,16 @@
             // helpMenu
             // 
             this.helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator8});
+            this.toolStripSeparator8,
+            this.aboutAppToolStripMenuItem});
             this.helpMenu.Name = "helpMenu";
             this.helpMenu.Size = new System.Drawing.Size(52, 20);
             this.helpMenu.Text = "&About";
-            this.helpMenu.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(57, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStrip
             // 
@@ -179,28 +180,6 @@
             this.toolStrip.Size = new System.Drawing.Size(1133, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.prgBar,
-            this.toolStripStatusLabel1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 709);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1133, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // prgBar
-            // 
-            this.prgBar.Name = "prgBar";
-            this.prgBar.Size = new System.Drawing.Size(100, 16);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel1.Text = "Status";
             // 
             // toolStripSplitButton1
             // 
@@ -273,6 +252,7 @@
             // 
             this.viewDonorGiftToolStripMenuItem.Name = "viewDonorGiftToolStripMenuItem";
             this.viewDonorGiftToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.viewDonorGiftToolStripMenuItem.Tag = "reportgift";
             this.viewDonorGiftToolStripMenuItem.Text = "View Donor - Gift Report";
             this.viewDonorGiftToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
@@ -280,6 +260,7 @@
             // 
             this.viewVolunteerAssignmentReportToolStripMenuItem.Name = "viewVolunteerAssignmentReportToolStripMenuItem";
             this.viewVolunteerAssignmentReportToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.viewVolunteerAssignmentReportToolStripMenuItem.Tag = "reportassn";
             this.viewVolunteerAssignmentReportToolStripMenuItem.Text = "View Volunteer Assignment Report";
             this.viewVolunteerAssignmentReportToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
@@ -292,7 +273,37 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Tag = "about";
             this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.ShowNewForm);
+            this.toolStripButton1.Click += new System.EventHandler(this.ShowNewFormToolBtn);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.prgBar,
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 709);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(1133, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // prgBar
+            // 
+            this.prgBar.Name = "prgBar";
+            this.prgBar.Size = new System.Drawing.Size(100, 16);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel1.Text = "Status";
+            // 
+            // aboutAppToolStripMenuItem
+            // 
+            this.aboutAppToolStripMenuItem.Name = "aboutAppToolStripMenuItem";
+            this.aboutAppToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutAppToolStripMenuItem.Tag = "about";
+            this.aboutAppToolStripMenuItem.Text = "About App";
+            this.aboutAppToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // MainForm
             // 
@@ -349,6 +360,7 @@
         private System.Windows.Forms.ToolStripMenuItem addVolunteerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewDonorGiftToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewVolunteerAssignmentReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutAppToolStripMenuItem;
     }
 }
 

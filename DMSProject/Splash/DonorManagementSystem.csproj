@@ -69,6 +69,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssemblyInformation.cs" />
     <Compile Include="ReportDonorGift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Screens\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\volunteerpic455.png" />
@@ -344,6 +346,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reportspic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportspicblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportspicblue1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
