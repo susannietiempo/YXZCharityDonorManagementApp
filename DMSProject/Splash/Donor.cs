@@ -46,6 +46,7 @@ namespace Splash
         {
             LoadConstituencyType();
             LoadFirstDonor();
+            LoadAccountInfo();
 
         }
 
@@ -309,6 +310,32 @@ namespace Splash
 
         } //end btnEdit_Click method
 
+        private void dgvDonors_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvDonors.CurrentRow == null)
+                {
+                    return;
+                }
+
+                if (dgvDonors.CurrentRow.Selected)
+                {
+                    DataGridViewRow currDonorRow = dgvDonors.CurrentRow;
+
+                    currentAccountId = Convert.ToInt32(currDonorRow.Cells[0].Value);
+
+                    LoadDonorInfo();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+
+        }
+
         #endregion
 
         #region Database Actions
@@ -399,6 +426,8 @@ namespace Splash
 
         }
 
+
+
         /// <summary>
         /// Load the first donor in the table. Ordering the donors by KeyName
         /// </summary>
@@ -407,6 +436,19 @@ namespace Splash
             currentAccountId = Convert.ToInt32(DataAccess.GetValue("SELECT TOP (1) AccountId FROM Account ORDER BY KeyName"));
             LoadDonorInfo();
         }
+
+        private void LoadAccountInfo()
+        {
+            dgvDonors.DataSource = DataAccess.GetData($"SELECT AccountId, KeyName FROM Account ORDER BY KeyName");
+            dgvDonors.AutoResizeColumns();
+        }
+
+        private void LoadAccountInfo(string text)
+        {
+            dgvDonors.DataSource = DataAccess.GetData($"SELECT AccountId, KeyName FROM Account WHERE KeyName LIKE '%' + '{text}' + '%' ORDER BY KeyName");
+            dgvDonors.AutoResizeColumns();
+        }
+
 
         /// <summary>
         /// Saves the updates in the donor form information to the record in teh database.
@@ -668,6 +710,27 @@ namespace Splash
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
             }
         }
+        #endregion
+
+        #region Search
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Length > 0)
+            {
+                string text = txtSearch.Text;
+
+                LoadAccountInfo(text);
+
+            }
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Text = "";
+            txtSearch.Enabled = true;
+            txtSearch.ReadOnly = false;
+        }
+
         #endregion
 
     }

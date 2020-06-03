@@ -68,6 +68,8 @@ namespace Splash
                     dgvGiftDetails.DataSource = DataAccess.GetData(sql);
                     dgvGiftDetails.AutoResizeColumns();
                     dgvGiftDetails.Columns[0].Visible = false;
+
+
                     txtGiftAmt.Text = Convert.ToDecimal(DataAccess.GetValue($"SELECT SUM(ReceivedAmount) FROM Gift WHERE AccountId = {accountId}")).ToString("c");
                     txtRecentGift.Text = Convert.ToDecimal(DataAccess.GetValue($"SELECT Top (1) ReceivedAmount FROM Gift WHERE AccountId = {accountId} ORDER BY GiftDate DESC")).ToString("c");
                     txtTotalGiftNum.Text = Convert.ToDecimal(DataAccess.GetValue($"SELECT COUNT(GiftId) FROM Gift WHERE AccountId = {accountId}")).ToString();

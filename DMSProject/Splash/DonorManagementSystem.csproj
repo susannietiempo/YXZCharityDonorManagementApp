@@ -130,7 +130,6 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="UIUtilities.cs" />
-    <Compile Include="Validation.cs" />
     <Compile Include="VolunteerAssignment.cs">
       <SubType>Form</SubType>
     </Compile>

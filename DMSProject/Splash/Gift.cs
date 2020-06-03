@@ -47,6 +47,10 @@ namespace Splash
         {
             LoadDonorName();
             LoadFirstGift();
+            LoadAccountInfo();
+
+
+
         }
 
         /// <summary>
@@ -320,10 +324,76 @@ namespace Splash
 
         } //end method
 
+
+        private void dgvDonors_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvDonors.CurrentRow == null)
+                {
+                    return;
+                }
+                if (dgvDonors.CurrentRow.Selected)
+                {
+                    DataGridViewRow currDonorRow = dgvDonors.CurrentRow;
+                    int accountId = Convert.ToInt32(currDonorRow.Cells[0].Value);
+                    string sql = $"SELECT GiftId, GiftDate, ReceivedAmount, GiftType, Fund FROM Gift WHERE AccountId = {accountId} ORDER BY GiftDate DESC";
+
+                    dgvGiftDetails.DataSource = DataAccess.GetData(sql);
+                    dgvGiftDetails.AutoResizeColumns();
+                    dgvGiftDetails.Columns[0].Visible = false;
+                  
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+
+        }
+
+        private void dgvGiftDetails_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvGiftDetails.CurrentRow == null)
+                {
+                    return;
+                }
+                if (dgvGiftDetails.CurrentRow.Selected)
+                {
+                    DataGridViewRow currGiftRow = dgvGiftDetails.CurrentRow;
+                    currentGiftId = Convert.ToInt32(currGiftRow.Cells[0].Value);
+
+                    LoadGiftInfo();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
         #endregion
 
         #region Database Actions
 
+        /// <summary>
+        /// Loads the donor information to the datagridvuew
+        /// </summary>
+        private void LoadAccountInfo()
+        {
+            dgvDonors.DataSource = DataAccess.GetData($"SELECT AccountId, KeyName, City, PostalCode FROM Account ORDER BY KeyName");
+            dgvDonors.AutoResizeColumns();
+            dgvDonors.Columns[0].Visible = false;
+        }
+
+        private void LoadAccountInfo(string text)
+        {
+            dgvDonors.DataSource = DataAccess.GetData($"SELECT AccountId, KeyName, City, PostalCode FROM Account WHERE KeyName LIKE '%' + '{text}' + '%' ORDER BY KeyName");
+            dgvDonors.AutoResizeColumns();
+            dgvDonors.Columns[0].Visible = false;
+        }
 
         private void LoadDonorName()
         {
@@ -519,8 +589,25 @@ namespace Splash
             btnSaveDelete.BackColor = Color.IndianRed;
         }
 
+
+
         #endregion
 
+        #region Search
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+                string text = txtSearch.Text;
 
+                LoadAccountInfo(text);
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Text = "";
+            txtSearch.Enabled = true;
+            txtSearch.ReadOnly = false;
+        }
+
+        #endregion
     }
 }

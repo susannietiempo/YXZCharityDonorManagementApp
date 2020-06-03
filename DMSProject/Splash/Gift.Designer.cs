@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelIcons = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.picBoxVolunteer = new System.Windows.Forms.PictureBox();
@@ -76,6 +83,11 @@
             this.txtGiftId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvDonors = new System.Windows.Forms.DataGridView();
+            this.dgvGiftDetails = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.panelIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGift)).BeginInit();
@@ -89,6 +101,9 @@
             this.panel3.SuspendLayout();
             this.panelGift.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDonors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGiftDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelIcons
@@ -372,6 +387,11 @@
             // panelGift
             // 
             this.panelGift.BackColor = System.Drawing.Color.White;
+            this.panelGift.Controls.Add(this.label27);
+            this.panelGift.Controls.Add(this.pictureBox2);
+            this.panelGift.Controls.Add(this.txtSearch);
+            this.panelGift.Controls.Add(this.dgvGiftDetails);
+            this.panelGift.Controls.Add(this.dgvDonors);
             this.panelGift.Controls.Add(this.cboDonorName);
             this.panelGift.Controls.Add(this.txtGiftNote);
             this.panelGift.Controls.Add(this.btnLast);
@@ -404,7 +424,7 @@
             // 
             this.cboDonorName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboDonorName.FormattingEnabled = true;
-            this.cboDonorName.Location = new System.Drawing.Point(221, 133);
+            this.cboDonorName.Location = new System.Drawing.Point(555, 134);
             this.cboDonorName.Name = "cboDonorName";
             this.cboDonorName.Size = new System.Drawing.Size(204, 21);
             this.cboDonorName.TabIndex = 44;
@@ -414,7 +434,7 @@
             // 
             this.txtGiftNote.BackColor = System.Drawing.Color.White;
             this.txtGiftNote.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiftNote.Location = new System.Drawing.Point(594, 172);
+            this.txtGiftNote.Location = new System.Drawing.Point(854, 176);
             this.txtGiftNote.MinimumSize = new System.Drawing.Size(204, 45);
             this.txtGiftNote.Multiline = true;
             this.txtGiftNote.Name = "txtGiftNote";
@@ -428,7 +448,7 @@
             this.btnLast.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLast.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLast.ForeColor = System.Drawing.Color.White;
-            this.btnLast.Location = new System.Drawing.Point(560, 353);
+            this.btnLast.Location = new System.Drawing.Point(856, 350);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(75, 27);
             this.btnLast.TabIndex = 42;
@@ -443,7 +463,7 @@
             this.btnFirst.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFirst.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.ForeColor = System.Drawing.Color.White;
-            this.btnFirst.Location = new System.Drawing.Point(325, 353);
+            this.btnFirst.Location = new System.Drawing.Point(621, 350);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(75, 27);
             this.btnFirst.TabIndex = 41;
@@ -458,7 +478,7 @@
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(481, 353);
+            this.btnNext.Location = new System.Drawing.Point(777, 350);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 27);
             this.btnNext.TabIndex = 40;
@@ -473,7 +493,7 @@
             this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrevious.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.White;
-            this.btnPrevious.Location = new System.Drawing.Point(402, 353);
+            this.btnPrevious.Location = new System.Drawing.Point(698, 350);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 27);
             this.btnPrevious.TabIndex = 39;
@@ -486,7 +506,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label11.Location = new System.Drawing.Point(183, 273);
+            this.label11.Location = new System.Drawing.Point(517, 274);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 18;
@@ -497,7 +517,7 @@
             // 
             this.txtFund.BackColor = System.Drawing.Color.White;
             this.txtFund.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFund.Location = new System.Drawing.Point(221, 269);
+            this.txtFund.Location = new System.Drawing.Point(555, 270);
             this.txtFund.Name = "txtFund";
             this.txtFund.Size = new System.Drawing.Size(204, 22);
             this.txtFund.TabIndex = 17;
@@ -509,7 +529,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label10.Location = new System.Drawing.Point(532, 172);
+            this.label10.Location = new System.Drawing.Point(792, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 16;
@@ -521,7 +541,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label9.Location = new System.Drawing.Point(157, 245);
+            this.label9.Location = new System.Drawing.Point(491, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 13);
             this.label9.TabIndex = 14;
@@ -532,7 +552,7 @@
             // 
             this.txtCampaign.BackColor = System.Drawing.Color.White;
             this.txtCampaign.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCampaign.Location = new System.Drawing.Point(221, 241);
+            this.txtCampaign.Location = new System.Drawing.Point(555, 242);
             this.txtCampaign.Name = "txtCampaign";
             this.txtCampaign.Size = new System.Drawing.Size(204, 22);
             this.txtCampaign.TabIndex = 13;
@@ -544,7 +564,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label8.Location = new System.Drawing.Point(160, 219);
+            this.label8.Location = new System.Drawing.Point(494, 220);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 12;
@@ -555,7 +575,7 @@
             // 
             this.txtApproach.BackColor = System.Drawing.Color.White;
             this.txtApproach.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApproach.Location = new System.Drawing.Point(221, 215);
+            this.txtApproach.Location = new System.Drawing.Point(555, 216);
             this.txtApproach.Name = "txtApproach";
             this.txtApproach.Size = new System.Drawing.Size(204, 22);
             this.txtApproach.TabIndex = 11;
@@ -567,7 +587,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label7.Location = new System.Drawing.Point(160, 192);
+            this.label7.Location = new System.Drawing.Point(494, 193);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 10;
@@ -578,7 +598,7 @@
             // 
             this.txtGiftType.BackColor = System.Drawing.Color.White;
             this.txtGiftType.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiftType.Location = new System.Drawing.Point(221, 187);
+            this.txtGiftType.Location = new System.Drawing.Point(555, 188);
             this.txtGiftType.Name = "txtGiftType";
             this.txtGiftType.Size = new System.Drawing.Size(204, 22);
             this.txtGiftType.TabIndex = 9;
@@ -590,7 +610,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label6.Location = new System.Drawing.Point(123, 163);
+            this.label6.Location = new System.Drawing.Point(457, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 13);
             this.label6.TabIndex = 8;
@@ -601,7 +621,7 @@
             // 
             this.txtReceivedAmount.BackColor = System.Drawing.Color.White;
             this.txtReceivedAmount.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReceivedAmount.Location = new System.Drawing.Point(221, 159);
+            this.txtReceivedAmount.Location = new System.Drawing.Point(555, 160);
             this.txtReceivedAmount.Name = "txtReceivedAmount";
             this.txtReceivedAmount.Size = new System.Drawing.Size(204, 22);
             this.txtReceivedAmount.TabIndex = 7;
@@ -613,7 +633,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label5.Location = new System.Drawing.Point(145, 134);
+            this.label5.Location = new System.Drawing.Point(479, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 6;
@@ -624,7 +644,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label4.Location = new System.Drawing.Point(535, 134);
+            this.label4.Location = new System.Drawing.Point(795, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 4;
@@ -634,7 +654,7 @@
             // 
             this.txtDate.BackColor = System.Drawing.Color.White;
             this.txtDate.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate.Location = new System.Drawing.Point(594, 130);
+            this.txtDate.Location = new System.Drawing.Point(854, 134);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(204, 22);
             this.txtDate.TabIndex = 3;
@@ -646,7 +666,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label3.Location = new System.Drawing.Point(175, 107);
+            this.label3.Location = new System.Drawing.Point(509, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 2;
@@ -655,7 +675,7 @@
             // txtGiftId
             // 
             this.txtGiftId.BackColor = System.Drawing.Color.LightGray;
-            this.txtGiftId.Location = new System.Drawing.Point(221, 103);
+            this.txtGiftId.Location = new System.Drawing.Point(555, 104);
             this.txtGiftId.Name = "txtGiftId";
             this.txtGiftId.Size = new System.Drawing.Size(100, 20);
             this.txtGiftId.TabIndex = 1;
@@ -665,7 +685,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(97, 22);
+            this.label2.Location = new System.Drawing.Point(489, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 25);
             this.label2.TabIndex = 0;
@@ -674,6 +694,112 @@
             // errProvider
             // 
             this.errProvider.ContainerControl = this;
+            // 
+            // dgvDonors
+            // 
+            this.dgvDonors.AllowUserToAddRows = false;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDonors.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            this.dgvDonors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDonors.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDonors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.dgvDonors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDonors.DefaultCellStyle = dataGridViewCellStyle48;
+            this.dgvDonors.Location = new System.Drawing.Point(13, 97);
+            this.dgvDonors.Name = "dgvDonors";
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDonors.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            this.dgvDonors.Size = new System.Drawing.Size(412, 162);
+            this.dgvDonors.TabIndex = 47;
+            this.dgvDonors.SelectionChanged += new System.EventHandler(this.dgvDonors_SelectionChanged);
+            // 
+            // dgvGiftDetails
+            // 
+            this.dgvGiftDetails.AllowUserToAddRows = false;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvGiftDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            this.dgvGiftDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGiftDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGiftDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.dgvGiftDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGiftDetails.DefaultCellStyle = dataGridViewCellStyle45;
+            this.dgvGiftDetails.Location = new System.Drawing.Point(13, 289);
+            this.dgvGiftDetails.Name = "dgvGiftDetails";
+            this.dgvGiftDetails.Size = new System.Drawing.Size(477, 164);
+            this.dgvGiftDetails.TabIndex = 48;
+            this.dgvGiftDetails.SelectionChanged += new System.EventHandler(this.dgvGiftDetails_SelectionChanged);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(49, 70);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(176, 21);
+            this.txtSearch.TabIndex = 50;
+            this.txtSearch.Text = "Search Donor";
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Splash.Properties.Resources.search20;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox2.TabIndex = 51;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label27.Location = new System.Drawing.Point(194, 270);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 13);
+            this.label27.TabIndex = 61;
+            this.label27.Text = "Gifts List";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Gift
             // 
@@ -705,6 +831,9 @@
             this.panelGift.ResumeLayout(false);
             this.panelGift.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDonors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGiftDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -758,5 +887,10 @@
         private System.Windows.Forms.Button btnSaveDelete;
         private System.Windows.Forms.ComboBox cboDonorName;
         private System.Windows.Forms.ErrorProvider errProvider;
+        private System.Windows.Forms.DataGridView dgvDonors;
+        private System.Windows.Forms.DataGridView dgvGiftDetails;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label27;
     }
 }
