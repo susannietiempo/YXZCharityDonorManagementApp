@@ -43,9 +43,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtVolHours = new System.Windows.Forms.TextBox();
-            this.txtTotalHours = new System.Windows.Forms.Label();
+            this.lblhors = new System.Windows.Forms.Label();
             this.txtTotalProgJoined = new System.Windows.Forms.TextBox();
-            this.txtTotalProg = new System.Windows.Forms.Label();
+            this.lblProg = new System.Windows.Forms.Label();
             this.txtRemainingHours = new System.Windows.Forms.TextBox();
             this.txtDonorName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.cboVolName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvVolunteers = new System.Windows.Forms.DataGridView();
-            this.dvgAssignments = new System.Windows.Forms.DataGridView();
+            this.dgvAssignments = new System.Windows.Forms.DataGridView();
             this.cboProgram = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.panel3.SuspendLayout();
             this.panelVol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVolunteers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgAssignments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignments)).BeginInit();
             this.panelIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -135,9 +135,9 @@
             this.panelVol.Controls.Add(this.label13);
             this.panelVol.Controls.Add(this.label12);
             this.panelVol.Controls.Add(this.txtVolHours);
-            this.panelVol.Controls.Add(this.txtTotalHours);
+            this.panelVol.Controls.Add(this.lblhors);
             this.panelVol.Controls.Add(this.txtTotalProgJoined);
-            this.panelVol.Controls.Add(this.txtTotalProg);
+            this.panelVol.Controls.Add(this.lblProg);
             this.panelVol.Controls.Add(this.txtRemainingHours);
             this.panelVol.Controls.Add(this.txtDonorName);
             this.panelVol.Controls.Add(this.label9);
@@ -147,7 +147,7 @@
             this.panelVol.Controls.Add(this.cboVolName);
             this.panelVol.Controls.Add(this.label3);
             this.panelVol.Controls.Add(this.dgvVolunteers);
-            this.panelVol.Controls.Add(this.dvgAssignments);
+            this.panelVol.Controls.Add(this.dgvAssignments);
             this.panelVol.Controls.Add(this.cboProgram);
             this.panelVol.Controls.Add(this.label6);
             this.panelVol.Controls.Add(this.label5);
@@ -199,17 +199,17 @@
             this.txtVolHours.Size = new System.Drawing.Size(126, 21);
             this.txtVolHours.TabIndex = 58;
             // 
-            // txtTotalHours
+            // lblhors
             // 
-            this.txtTotalHours.AutoSize = true;
-            this.txtTotalHours.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.txtTotalHours.Location = new System.Drawing.Point(852, 230);
-            this.txtTotalHours.Name = "txtTotalHours";
-            this.txtTotalHours.Size = new System.Drawing.Size(87, 13);
-            this.txtTotalHours.TabIndex = 57;
-            this.txtTotalHours.Text = "Total Vol. Hours";
-            this.txtTotalHours.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblhors.AutoSize = true;
+            this.lblhors.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.lblhors.Location = new System.Drawing.Point(852, 230);
+            this.lblhors.Name = "lblhors";
+            this.lblhors.Size = new System.Drawing.Size(87, 13);
+            this.lblhors.TabIndex = 57;
+            this.lblhors.Text = "Total Vol. Hours";
+            this.lblhors.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTotalProgJoined
             // 
@@ -219,17 +219,17 @@
             this.txtTotalProgJoined.Size = new System.Drawing.Size(126, 21);
             this.txtTotalProgJoined.TabIndex = 56;
             // 
-            // txtTotalProg
+            // lblProg
             // 
-            this.txtTotalProg.AutoSize = true;
-            this.txtTotalProg.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalProg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.txtTotalProg.Location = new System.Drawing.Point(843, 257);
-            this.txtTotalProg.Name = "txtTotalProg";
-            this.txtTotalProg.Size = new System.Drawing.Size(97, 13);
-            this.txtTotalProg.TabIndex = 55;
-            this.txtTotalProg.Text = "Total Prog. Joined";
-            this.txtTotalProg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblProg.AutoSize = true;
+            this.lblProg.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.lblProg.Location = new System.Drawing.Point(843, 257);
+            this.lblProg.Name = "lblProg";
+            this.lblProg.Size = new System.Drawing.Size(97, 13);
+            this.lblProg.TabIndex = 55;
+            this.lblProg.Text = "Total Prog. Joined";
+            this.lblProg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtRemainingHours
             // 
@@ -357,16 +357,16 @@
             this.dgvVolunteers.TabIndex = 46;
             this.dgvVolunteers.SelectionChanged += new System.EventHandler(this.dgvDonors_SelectionChanged);
             // 
-            // dvgAssignments
+            // dgvAssignments
             // 
-            this.dvgAssignments.AllowUserToAddRows = false;
+            this.dgvAssignments.AllowUserToAddRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.Plum;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            this.dvgAssignments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dvgAssignments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvAssignments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvAssignments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dvgAssignments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
+            this.dgvAssignments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,8 +374,8 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgAssignments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dvgAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssignments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -383,11 +383,11 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dvgAssignments.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dvgAssignments.Location = new System.Drawing.Point(617, 285);
-            this.dvgAssignments.Name = "dvgAssignments";
-            this.dvgAssignments.Size = new System.Drawing.Size(440, 164);
-            this.dvgAssignments.TabIndex = 45;
+            this.dgvAssignments.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvAssignments.Location = new System.Drawing.Point(617, 285);
+            this.dgvAssignments.Name = "dgvAssignments";
+            this.dgvAssignments.Size = new System.Drawing.Size(440, 164);
+            this.dgvAssignments.TabIndex = 45;
             // 
             // cboProgram
             // 
@@ -652,7 +652,7 @@
             this.panelVol.ResumeLayout(false);
             this.panelVol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVolunteers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgAssignments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignments)).EndInit();
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).EndInit();
@@ -678,9 +678,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtVolHours;
-        private System.Windows.Forms.Label txtTotalHours;
+        private System.Windows.Forms.Label lblhors;
         private System.Windows.Forms.TextBox txtTotalProgJoined;
-        private System.Windows.Forms.Label txtTotalProg;
+        private System.Windows.Forms.Label lblProg;
         private System.Windows.Forms.TextBox txtDonorName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -688,7 +688,7 @@
         private System.Windows.Forms.ComboBox cboVolName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvVolunteers;
-        private System.Windows.Forms.DataGridView dvgAssignments;
+        private System.Windows.Forms.DataGridView dgvAssignments;
         private System.Windows.Forms.ComboBox cboProgram;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

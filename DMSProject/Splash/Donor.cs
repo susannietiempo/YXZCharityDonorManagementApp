@@ -79,7 +79,7 @@ namespace Splash
             try
             {
                 //create a method for this
-                btnCancel.Cursor = Cursors.Hand;
+                btnCancelReset.Text = "Cancel";
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
@@ -151,14 +151,27 @@ namespace Splash
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (btnCancelReset.Text == "Reset")
                 {
-                    LoadDonorInfo();
-                    btnAdd.Visible = true;
-                    btnEdit.Visible = true;
-                    btnSaveDelete.Text = "Delete";
-                    btnSaveDelete.BackColor = Color.IndianRed;
+                    txtSearch.Text = "";
+                    LoadConstituencyType();
+                    LoadFirstDonor();
+                    LoadAccountInfo();
+
                 }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        LoadDonorInfo();
+                        btnAdd.Visible = true;
+                        btnEdit.Visible = true;
+                        btnSaveDelete.Text = "Delete";
+                        btnCancelReset.Text = "Reset";
+                        btnSaveDelete.BackColor = Color.IndianRed;
+                    }
+                }
+              
             }
             catch (Exception ex)
             {
@@ -236,22 +249,29 @@ namespace Splash
                 string txtBoxName = txt.Tag.ToString();
                 string errMsg = null;
 
-                if (txt.Text == string.Empty)
+                if (!txt.Enabled || txt.ReadOnly)
                 {
-                    errMsg = $"{txtBoxName} is required.";
-                    e.Cancel = true;
+                    errProvider.Clear();
                 }
-
-                if (txt.Name == "txtBirthdate" || txt.Name == "txtDateAdded")
+                else
                 {
-                    if (!IsDate(txt.Text))
+                    if (txt.Text == string.Empty)
                     {
-                        errMsg = $"{txtBoxName} is not a valid date. (Format: yyyy-mm-dd)";
+                        errMsg = $"{txtBoxName} is required.";
                         e.Cancel = true;
                     }
-                }
 
-                errProvider.SetError(txt, errMsg);
+                    if (txt.Name == "txtBirthdate" || txt.Name == "txtDateAdded")
+                    {
+                        if (!IsDate(txt.Text))
+                        {
+                            errMsg = $"{txtBoxName} is not a valid date. (Format: yyyy-mm-dd)";
+                            e.Cancel = true;
+                        }
+                    }
+
+                    errProvider.SetError(txt, errMsg);
+                }
             }
             catch (Exception ex)
             {
@@ -266,7 +286,7 @@ namespace Splash
         {
             try
             {
-                btnCancel.Cursor = Cursors.Hand;
+                btnCancelReset.Text = "Cancel";
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
@@ -339,6 +359,9 @@ namespace Splash
         #endregion
 
         #region Database Actions
+       /// <summary>
+       /// Lads the data on the constituency combobox.
+       /// </summary>
         private void LoadConstituencyType()
         {
             DataTable dt = DataAccess.GetData("SELECT ConstituencyTypeId, ConstituencyTypeName  FROM ConstituencyType ORDER BY ConstituencyTypeName");

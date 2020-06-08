@@ -71,7 +71,6 @@ namespace Splash
         {
             try
             {
-                btnCancel.Cursor = Cursors.Hand;
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
@@ -175,15 +174,24 @@ namespace Splash
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (btnCancel.Text == "Reset")
                 {
-                    LoadProgramInfo();
-                    btnAdd.Visible = true;
-                    btnEdit.Visible = true;
-                    btnSaveDelete.Text = "Delete";
-                    btnSaveDelete.BackColor = Color.IndianRed;
+
+                    LoadFirstProgram();
+                }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        LoadProgramInfo();
+                        btnAdd.Visible = true;
+                        btnEdit.Visible = true;
+                        btnSaveDelete.Text = "Delete";
+                        btnSaveDelete.BackColor = Color.IndianRed;
+                    }
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
@@ -305,7 +313,7 @@ namespace Splash
                 q.PreviousProgramId ,
                 q.NextProgramId,
                 (
-                    SELECT TOP(1) ProgramId FROM VolunteerProgram ORDER BY ProgramName
+                    SELECT TOP(1) ProgramId FROM VolunteerProgram ORDER BY ProgramName DESC
                 ) as LastProgramId,
                 q.RowNumber
                 FROM

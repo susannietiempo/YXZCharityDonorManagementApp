@@ -15,12 +15,20 @@ namespace Splash
     public static class UtilityHelper
     {
 
+        public static void ProgessBarOnError(MainForm myParent)
+        {
+            myParent.statusStrip.Refresh();
+            myParent.statusStrip.Text = "Input fields again.";
+            myParent.statusStrip.ForeColor = Color.Black;
+        }
+
         /// <summary>
         /// Animate the progress bar
         /// This UI thread blocking, however, this ok for this application
         /// </summary>
         public static void ProgressBar(MainForm myParent)
         {
+            myParent.statusStrip.ForeColor = Color.Black;
             myParent.toolStripStatusLabel1.Text = "Processing...";
 
             myParent.prgBar.Value = 0;

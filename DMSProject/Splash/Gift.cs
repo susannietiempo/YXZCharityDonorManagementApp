@@ -77,7 +77,7 @@ namespace Splash
             try
             {
                 errProvider.Clear();
-                btnCancel.Cursor = Cursors.Hand;
+                btnCancelReset.Text = "Cancel";
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
@@ -103,11 +103,12 @@ namespace Splash
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
+
         {
             try
             {
+                btnCancelReset.Text = "Cancel";
                 errProvider.Clear();
-                btnCancel.Cursor = Cursors.Hand;
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
@@ -183,17 +184,32 @@ namespace Splash
         /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
+
             try
             {
-                if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (btnCancelReset.Text == "Reset")
                 {
-                    LoadGiftInfo();
-                    btnAdd.Visible = true;
-                    btnEdit.Visible = true;
-                    btnSaveDelete.Text = "Delete";
-                    btnSaveDelete.BackColor = Color.IndianRed;
-                    errProvider.Clear();
+                    txtSearch.Text = "";
+                    dgvGiftDetails.DataSource = null;
+                    LoadDonorName();
+                    LoadFirstGift();
+                    LoadAccountInfo();
+
                 }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to cancel?", "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        LoadGiftInfo();
+                        btnAdd.Visible = true;
+                        btnEdit.Visible = true;
+                        btnSaveDelete.Text = "Delete";
+                        btnSaveDelete.BackColor = Color.IndianRed;
+                        btnCancelReset.Text = "Reset";
+                        errProvider.Clear();
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -244,6 +260,11 @@ namespace Splash
             }
         }
 
+        /// <summary>
+        /// Handles the error provider actions for textboxes. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -252,39 +273,61 @@ namespace Splash
                 string txtBoxName = txt.Tag.ToString();
                 string errMsg = null;
 
-                if (txt.Text == string.Empty)
+                if (!txt.Enabled || txt.ReadOnly)
                 {
-                    errMsg = $"{txtBoxName} is required.";
-                    e.Cancel = true;
+                    errProvider.Clear();
                 }
 
-                if (txt.Name == "txtDate")
+                else 
                 {
-                    if (!IsDate(txt.Text))
+
+                    if (txt.Text == string.Empty)
                     {
-                        errMsg = $"{txtBoxName} is not a valid date. (Format: yyyy-mm-dd)";
+                        errMsg = $"{txtBoxName} is required.";
                         e.Cancel = true;
                     }
+
+                    //Implment business rule 002
+                    // A gift record can have one of the following gift types: Cash, In - Kind, Cheque, Pledge, PAD, Credit Card, EFT.
+
+                    if (txt.Name == "txtGiftType")
+                    {
+                        string giftType = txtGiftType.Text.Trim();
+                        List<string> validGiftType = new List<string> { "Cash", "In - Kind", "Cheque", "Pledge", "PAD", "Credit Card", "EFT" };
+
+                        if (!validGiftType.Contains(giftType))
+                        {
+                            errMsg = $"{txtBoxName} should be Cash, In - Kind, Cheque, Pledge, PAD, Credit Card, EFT only";
+                            e.Cancel = true;
+                        }
+                    }
+                    if (txt.Name == "txtDate")
+                    {
+                        if (!IsDate(txt.Text))
+                        {
+                            errMsg = $"{txtBoxName} is not a valid date. (Format: yyyy-mm-dd)";
+                            e.Cancel = true;
+                        }
+                    }
+
+                    if (txt.Name == "txtReceivedAmount")
+                    {
+                        if (!IsNumeric(decimal.Parse(txt.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.Number).ToString()))
+                        {
+                            errMsg = $"{txtBoxName} is not numeric ";
+                            e.Cancel = true;
+                        }
+                    }
+
+                    errProvider.SetError(txt, errMsg);
                 }
+
                 
-                if (txt.Name == "txtReceivedAmount")
-                {
-                    if (!IsNumeric(decimal.Parse(txt.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.Number).ToString()))
-                    {
-                        errMsg = $"{txtBoxName} is not numeric ";
-                        e.Cancel = true;
-                    }
-                }
-
-                errProvider.SetError(txt, errMsg);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
             }
-
-
-
         } //txt_Validating end method
 
         private void cboDonorName_SelectedIndexChanged(object sender, EventArgs e)
@@ -388,6 +431,10 @@ namespace Splash
             dgvDonors.Columns[0].Visible = false;
         }
 
+        /// <summary>
+        /// Load account information to the data grid view for accounts.
+        /// </summary>
+        /// <param name="text"></param>
         private void LoadAccountInfo(string text)
         {
             dgvDonors.DataSource = DataAccess.GetData($"SELECT AccountId, KeyName, City, PostalCode FROM Account WHERE KeyName LIKE '%' + '{text}' + '%' ORDER BY KeyName");
@@ -479,7 +526,7 @@ namespace Splash
             }
             else
             {
-                MessageBox.Show("The constituents no longer exists");
+                MessageBox.Show("The gift no longer exists");
                 LoadFirstGift();
             }
 
@@ -549,7 +596,7 @@ namespace Splash
 
             int rowsAffected = DataAccess.SendData(sqlDelete);
 
-            UtilityHelper.ActionStatusMessage(rowsAffected, "Gift was deleted succesfully!", "Guft was not deleted. Please try again");
+            UtilityHelper.ActionStatusMessage(rowsAffected, "Gift was deleted succesfully!", "Gift was not deleted. Please try again");
             LoadGiftInfo();
 
             UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);

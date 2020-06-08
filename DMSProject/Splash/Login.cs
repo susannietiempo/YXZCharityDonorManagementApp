@@ -37,17 +37,20 @@ namespace Splash
         {
             try
             {
+                if (String.IsNullOrEmpty(txtPassword.Text.Trim()) || String.IsNullOrEmpty(txtUserName.Text.Trim()))
+                {
+                    MessageBox.Show("Password and Username are required", "Log In Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-                //TO DO: Update log in
-                if (1==1)
-                    //(txtUserName.Text == Environment.UserName &&
-                    //txtPassword.Text.Trim().ToLower() == ConfigurationManager.AppSettings["DefaultPassword"].ToString().ToLower())
+                string userPassword = DataAccess.GetValue($"Select Password FROM LogIn Where UserID = (SELECT UserId FROM [USER] WHERE UserName = '{txtUserName.Text.Trim()}')").ToString();
+                if (txtPassword.Text.Trim() == userPassword)
                 {
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageBox.Show("Login failed.", "Error!", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Login failed. Incorrect Password", "Log In Error", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)

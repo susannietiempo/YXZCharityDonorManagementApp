@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDonor = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.dgvDonors = new System.Windows.Forms.DataGridView();
             this.btnLast = new System.Windows.Forms.Button();
@@ -97,18 +99,17 @@
             this.label17 = new System.Windows.Forms.Label();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
             this.btnSaveDelete = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCancelReset = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelDonor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonors)).BeginInit();
             this.panelIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteer)).BeginInit();
@@ -118,7 +119,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -241,6 +241,26 @@
             this.panelDonor.Name = "panelDonor";
             this.panelDonor.Size = new System.Drawing.Size(1089, 471);
             this.panelDonor.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Splash.Properties.Resources.search20;
+            this.pictureBox2.Location = new System.Drawing.Point(50, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox2.TabIndex = 62;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(76, 45);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(176, 21);
+            this.txtSearch.TabIndex = 61;
+            this.txtSearch.Text = "Search Donor";
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label27
             // 
@@ -934,27 +954,27 @@
             this.btnSaveDelete.UseVisualStyleBackColor = false;
             this.btnSaveDelete.Click += new System.EventHandler(this.btnSaveDelete_Click);
             // 
-            // btnCancel
+            // btnCancelReset
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Gray;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(1004, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 27);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            this.btnCancelReset.BackColor = System.Drawing.Color.Gray;
+            this.btnCancelReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelReset.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelReset.ForeColor = System.Drawing.Color.White;
+            this.btnCancelReset.Location = new System.Drawing.Point(1004, 3);
+            this.btnCancelReset.Name = "btnCancelReset";
+            this.btnCancelReset.Size = new System.Drawing.Size(75, 27);
+            this.btnCancelReset.TabIndex = 4;
+            this.btnCancelReset.Text = "Reset";
+            this.btnCancelReset.UseVisualStyleBackColor = false;
+            this.btnCancelReset.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.btnEdit);
-            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.btnCancelReset);
             this.panel3.Controls.Add(this.btnSaveDelete);
             this.panel3.Location = new System.Drawing.Point(-5, 93);
             this.panel3.Name = "panel3";
@@ -996,26 +1016,6 @@
             // 
             this.errProvider.ContainerControl = this;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Splash.Properties.Resources.search20;
-            this.pictureBox2.Location = new System.Drawing.Point(50, 45);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox2.TabIndex = 62;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(76, 45);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(176, 21);
-            this.txtSearch.TabIndex = 61;
-            this.txtSearch.Text = "Search Donor";
-            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // Donor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1037,6 +1037,7 @@
             this.panel2.ResumeLayout(false);
             this.panelDonor.ResumeLayout(false);
             this.panelDonor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonors)).EndInit();
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();
@@ -1047,7 +1048,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1072,7 +1072,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox picBoxHome;
         private System.Windows.Forms.Button btnSaveDelete;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnCancelReset;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;

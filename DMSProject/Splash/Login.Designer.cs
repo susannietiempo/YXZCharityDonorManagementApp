@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxLogin = new System.Windows.Forms.PictureBox();
             this.picBoxCancel = new System.Windows.Forms.PictureBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCancel)).BeginInit();
@@ -51,6 +51,21 @@
             this.txtUserName.TabIndex = 2;
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.txtPassword.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.txtPassword.Location = new System.Drawing.Point(187, 216);
+            this.txtPassword.MinimumSize = new System.Drawing.Size(202, 38);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(271, 27);
+            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.UseWaitCursor = true;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // pictureBox1
             // 
@@ -87,21 +102,6 @@
             this.picBoxCancel.TabIndex = 0;
             this.picBoxCancel.TabStop = false;
             this.picBoxCancel.Click += new System.EventHandler(this.picBoxCancel_Click);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.txtPassword.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.txtPassword.Location = new System.Drawing.Point(187, 216);
-            this.txtPassword.MinimumSize = new System.Drawing.Size(202, 38);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(271, 27);
-            this.txtPassword.TabIndex = 5;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPassword.UseWaitCursor = true;
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // Login
             // 

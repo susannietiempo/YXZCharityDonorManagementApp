@@ -80,8 +80,8 @@ namespace Splash
                     int accountId = Convert.ToInt32(currDonorRow.Cells[0].Value);
                     string sql = $"SELECT ProgramName AS [Program Name], HoursCompleted, HoursSignedUp FROM  VolunteerAssignment INNER JOIN VolunteerProgram ON VolunteerProgram.ProgramId = VolunteerAssignment.ProgramId WHERE AccountId = {accountId}";
 
-                    dvgAssignments.DataSource = DataAccess.GetData(sql);
-                    dvgAssignments.AutoResizeColumns();
+                    dgvAssignments.DataSource = DataAccess.GetData(sql);
+                    dgvAssignments.AutoResizeColumns();
 
                     txtRemainingHours.Text = Convert.ToInt32(DataAccess.GetValue($"SELECT HoursSignedUp - HoursCompleted FROM VolunteerAssignment WHERE AccountId = {accountId}")).ToString();
                     txtVolHours.Text = Convert.ToInt32(DataAccess.GetValue($"SELECT SUM(HoursCompleted) AS TotalHours FROM VolunteerAssignment WHERE AccountId = {accountId}")).ToString();
@@ -101,6 +101,7 @@ namespace Splash
         {
             try
             {
+
                 if (cboProgram.SelectedIndex != 0)
                 {
                     int id = Convert.ToInt32(cboProgram.SelectedValue);
@@ -164,8 +165,9 @@ namespace Splash
                 LoadAccountInfo();
                 txtDonorName.Text = null;
                 txtRemainingHours.Text = null;
-                txtTotalHours.Text = null;
+                txtTotalProgJoined.Text = null;
                 txtVolHours.Text = null;
+                dgvAssignments = null;
             }
             catch (Exception ex)
             {
@@ -196,7 +198,7 @@ namespace Splash
         private void LoadAccountInfo()
         {
             dgvVolunteers.DataSource = DataAccess.GetData($"SELECT DISTINCT Account.AccountId, KeyName, StreetAddress, City, Province, Country  FROM Account INNER JOIN VolunteerAssignment On Account.AccountId  = VolunteerAssignment.AccountId  ORDER BY KeyName");
-            dgvVolunteers.AutoResizeColumns();
+            //dgvVolunteers.AutoResizeColumns();
             dgvVolunteers.Columns[0].Visible = false;
 
             txtVolCount.Text = dgvVolunteers.RowCount.ToString();
