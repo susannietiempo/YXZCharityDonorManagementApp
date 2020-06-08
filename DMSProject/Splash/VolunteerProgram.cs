@@ -79,13 +79,11 @@ namespace Splash
                 txtProgId.Enabled = false;
                 txtProgId.BackColor = Color.LightGray;
 
-                UtilityHelper.ControlState(panelVolProg.Controls, true);
+                UtilityHelper.ControlState(panelVolProg.Controls, false);
                 UtilityHelper.ClearControls(panelVolProg.Controls);
                 UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, false);
 
                 UtilityHelper.ToolStripDisplay(myParent, "Add Volunteer Program... ", Color.Black);
-
-                LoadProgramInfo();
 
                 txtProgStart.Text = DateTime.Today.ToShortDateString();
                 txtProgEnd.Text = DateTime.Today.ToShortDateString();
