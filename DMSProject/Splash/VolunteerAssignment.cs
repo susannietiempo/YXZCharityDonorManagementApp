@@ -17,7 +17,7 @@ namespace Splash
 
         private int currentProgramId = 0;
         private int currentAccountId = 0;
-        //variables we use in our nav
+
         private int firstProgramId = 0;
         private int firstAccountId = 0;
 
@@ -61,6 +61,10 @@ namespace Splash
             LoadVolunteerProgram();
             LoadFirstAssignment();
             LoadAssignmentDataGrid();
+            cboDonorName.Enabled = false;
+            cboVolunterProgram.Enabled = false;
+            txtCurrentHours.ReadOnly = true;
+            txtSignedUpHours.ReadOnly = true;
 
         }
         private void btnAdd_Click(object sender, EventArgs e)
@@ -109,11 +113,11 @@ namespace Splash
                 
                 //ensure that only the valid options per business rule 5 are implemented
 
-                LoadApplicableDonorName();
-                LoadActiveVolunteerProgram();
+                //LoadApplicableDonorName();
+                //LoadActiveVolunteerProgram();
 
-                cboDonorName.SelectedValue = currentAccountId;
-                cboVolunterProgram.SelectedValue = currentProgramId;
+                //cboDonorName.SelectedValue = currentAccountId;
+                //cboVolunterProgram.SelectedValue = currentProgramId;
 
                 txtSignedUpHours.Focus();
 
@@ -160,7 +164,7 @@ namespace Splash
                         btnEdit.Visible = false;
                         if (MessageBox.Show("Are you sure you want to delete this Assignment?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
-                           // DeleteGift();
+                            DeleteAssignment();
                         }
                     }
                 }
@@ -173,6 +177,8 @@ namespace Splash
 
             ButtonReset();
 
+            LoadFirstAssignment();
+            
             myParent.prgBar.Value = 0;
             myParent.statusStrip.Refresh();
         }
@@ -194,6 +200,10 @@ namespace Splash
                     LoadDonorName();
                     LoadFirstAssignment();
                     LoadAssignmentDataGrid();
+                    cboDonorName.Enabled = false;
+                    cboVolunterProgram.Enabled = false;
+                    txtCurrentHours.ReadOnly = true;
+                    txtSignedUpHours.ReadOnly = true;
                 }
                 else
                 {
@@ -206,8 +216,36 @@ namespace Splash
                         btnSaveDelete.BackColor = Color.IndianRed;
                         btnCancelReset.Text = "Reset";
                         errProvider.Clear();
+                        cboDonorName.Enabled = false;
+                        cboVolunterProgram.Enabled = false;
+                        txtCurrentHours.ReadOnly = true;
+                        txtSignedUpHours.ReadOnly = true;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
+            }
+        }
+
+        private void dgvdgvAssn_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvAssn.CurrentRow == null)
+                {
+                    return;
+                }
+                if (dgvAssn.CurrentRow.Selected)
+                {
+                    DataGridViewRow currGiftRow = dgvAssn.CurrentRow;
+                    currentProgramId = Convert.ToInt32(currGiftRow.Cells[0].Value);
+                    currentAccountId = Convert.ToInt32(currGiftRow.Cells[1].Value);
+
+                    LoadAssignmentDetails();
+                }
+
             }
             catch (Exception ex)
             {
@@ -299,7 +337,8 @@ namespace Splash
         private void LoadAssignmentDataGrid()
         {
             dgvAssn.DataSource = DataAccess.GetData($@"SELECT 
-            
+                                                            VolunteerAssignment.ProgramId,
+                                                            VolunteerAssignment.AccountId,
 	                                                        ProgramName,
 	                                                        KeyName,
 	                                                        HoursCompleted,
@@ -310,8 +349,30 @@ namespace Splash
                                                      INNER JOIN Account
                                                      ON VolunteerAssignment.AccountId = Account.AccountId");
             dgvAssn.AutoResizeColumns();
+            dgvAssn.Columns[0].Visible = false;
+            dgvAssn.Columns[1].Visible = false;
         }
 
+        private void LoadAssignmentDataGrid(string text)
+        {
+            dgvAssn.DataSource = DataAccess.GetData($@"SELECT 
+                                                            VolunteerAssignment.ProgramId,
+                                                            VolunteerAssignment.AccountId,
+	                                                        ProgramName,
+	                                                        KeyName,
+	                                                        HoursCompleted,
+	                                                        HoursSignedUp
+                                                     FROM VolunteerAssignment
+                                                     INNER JOIN VolunteerProgram
+                                                     ON VolunteerAssignment.ProgramId = VolunteerProgram.ProgramId
+                                                     INNER JOIN Account
+                                                     ON VolunteerAssignment.AccountId = Account.AccountId
+                                                     WHERE KeyName LIKE '%' + '{text}' + '%' OR ProgramName LIKE '%' + '{text}' + '%'   
+                                                    ");
+            dgvAssn.AutoResizeColumns();
+            dgvAssn.Columns[0].Visible = false;
+            dgvAssn.Columns[1].Visible = false;
+        }
         private void LoadAssignmentDetails()
         {
             errProvider.Clear();
@@ -436,6 +497,7 @@ namespace Splash
             int targetHeadCount = (int)DataAccess.GetValue($"SELECT TargetHeadCount FROM VolunteerProgram WHERE ProgramId = { currentProgramId}");
             int currentHeadCount = (int)DataAccess.GetValue($"SELECt COUNT(AccountId) FROM VolunteerAssignment WHERE ProgramId = { currentProgramId}");
 
+
             if (currentHeadCount <= targetHeadCount)
             {
                 string sqlUpdateAssn = $@"
@@ -452,8 +514,7 @@ namespace Splash
 
                 UtilityHelper.ActionStatusMessage(rowsAffected, "Assignment was updated succesfully!", "Assignment was not updated. Please try again!");
                 UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
-                LoadAssignmentDataGrid();
-                LoadAssignmentDetails();
+               
 
                 UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
             }
@@ -497,6 +558,20 @@ namespace Splash
             LoadAssignmentDetails();
             UtilityHelper.NextPreviousButtonManagement(btnPrevious, btnNext, previousProgramId, nextProgramId);
         }
+
+        private void DeleteAssignment()
+        {
+            string sqlDelete = $"DELETE FROM VolunteerAssignment WHERE ProgramId = {currentProgramId} AND AccountId = {currentAccountId}";
+
+            int rowsAffected = DataAccess.SendData(sqlDelete);
+
+            UtilityHelper.ActionStatusMessage(rowsAffected, "Volunteer Assignment was deleted succesfully!", "Volunteer Assignment  was not deleted. Please try again");
+            LoadAssignmentDetails();
+            LoadAssignmentDataGrid();
+
+            UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
+        }
+
 
         #endregion
 
@@ -579,6 +654,17 @@ namespace Splash
                             e.Cancel = true;
                         }
                     }
+
+                    if (txt.Name == "txtSignedUpHours")
+                    {
+                        int.TryParse(txtSignedUpHours.Text.Trim(), out int signedUpHours);
+                        double.TryParse(txtCurrentHours.Text.Trim(), out double currHours);
+                        if (currHours >= signedUpHours)
+                        {
+                            errMsg = $"{txtBoxName} you can't add hours over the signed up hours ";
+                            e.Cancel = true;
+                        }
+                    }
                     errProvider.SetError(txt, errMsg);
                 }
 
@@ -598,5 +684,30 @@ namespace Splash
             btnSaveDelete.BackColor = Color.IndianRed;
         }
         #endregion
+
+        #region Search
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string text = txtSearch.Text;
+
+            LoadAssignmentDataGrid(text);
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Text = "";
+            txtSearch.Enabled = true;
+            txtSearch.ReadOnly = false;
+        }
+
+        #endregion
+
+        private void labelLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                myParent.Close();
+            }
+        }
     }
 }

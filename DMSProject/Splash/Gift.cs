@@ -91,9 +91,9 @@ namespace Splash
 
                 UtilityHelper.ToolStripDisplay(myParent, "Action Required: Please select a donor to proceed!", Color.DarkRed);
 
-              LoadDonorName();
+                LoadDonorName();
                 cboDonorName.Focus();
-          
+
                 txtDate.Text = DateTime.Today.ToShortDateString();
             }
             catch (Exception ex)
@@ -278,7 +278,7 @@ namespace Splash
                     errProvider.Clear();
                 }
 
-                else 
+                else
                 {
 
                     if (txt.Text == string.Empty)
@@ -322,7 +322,7 @@ namespace Splash
                     errProvider.SetError(txt, errMsg);
                 }
 
-                
+
             }
             catch (Exception ex)
             {
@@ -385,7 +385,7 @@ namespace Splash
                     dgvGiftDetails.DataSource = DataAccess.GetData(sql);
                     dgvGiftDetails.AutoResizeColumns();
                     dgvGiftDetails.Columns[0].Visible = false;
-                  
+
                 }
             }
             catch (Exception ex)
@@ -598,6 +598,7 @@ namespace Splash
 
             UtilityHelper.ActionStatusMessage(rowsAffected, "Gift was deleted succesfully!", "Gift was not deleted. Please try again");
             LoadGiftInfo();
+            LoadAccountInfo();
 
             UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, true);
         }
@@ -643,9 +644,9 @@ namespace Splash
         #region Search
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-                string text = txtSearch.Text;
+            string text = txtSearch.Text;
 
-                LoadAccountInfo(text);
+            LoadAccountInfo(text);
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
@@ -656,5 +657,13 @@ namespace Splash
         }
 
         #endregion
+
+        private void labelLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                myParent.Close();
+            }
+        }
     }
 }

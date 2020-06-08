@@ -32,5 +32,12 @@ namespace Splash
             Display.ShowChildForm(control, myParent, this);
         }
 
+        private void labelLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                myParent.Close();
+            }
+        }
     }
 }

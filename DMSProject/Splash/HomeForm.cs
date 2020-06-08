@@ -49,12 +49,15 @@ namespace Splash
         {
             Control control = (Control)sender;
 
-            Display.ShowChildForm(control,myParent,this);
+            Display.ShowChildForm(control, myParent, this);
         }
 
         private void labelLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                myParent.Close();
+            }
         }
 
 

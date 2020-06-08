@@ -462,6 +462,7 @@
             this.labelLogout.Size = new System.Drawing.Size(47, 14);
             this.labelLogout.TabIndex = 4;
             this.labelLogout.Text = "LogOut";
+            this.labelLogout.Click += new System.EventHandler(this.labelLogout_Click);
             // 
             // pictureBox1
             // 
