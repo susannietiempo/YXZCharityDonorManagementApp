@@ -172,6 +172,9 @@ namespace Splash
             }
 
             ButtonReset();
+            btnSaveDelete.Text = "Delete";
+            btnCancelReset.Text = "Reset";
+            btnSaveDelete.BackColor = Color.IndianRed;
 
             myParent.prgBar.Value = 0;
             myParent.statusStrip.Refresh();

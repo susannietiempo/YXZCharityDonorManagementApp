@@ -5,6 +5,7 @@ namespace Splash
 {
     public partial class Login : Form
     {
+        internal string userName;
         public Login()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace Splash
         {
             try
             {
+                userName = txtUserName.Text.Trim();
                 if (String.IsNullOrEmpty(txtPassword.Text.Trim()) || String.IsNullOrEmpty(txtUserName.Text.Trim()))
                 {
                     MessageBox.Show("Password and Username are required", "Log In Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -46,7 +48,9 @@ namespace Splash
                 string userPassword = DataAccess.GetValue($"Select Password FROM LogIn Where UserID = (SELECT UserId FROM [USER] WHERE UserName = '{txtUserName.Text.Trim()}')").ToString();
                 if (txtPassword.Text.Trim() == userPassword)
                 {
+                    
                     DialogResult = DialogResult.OK;
+                    
                 }
                 else
                 {
@@ -58,5 +62,7 @@ namespace Splash
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
+     
     }
 }

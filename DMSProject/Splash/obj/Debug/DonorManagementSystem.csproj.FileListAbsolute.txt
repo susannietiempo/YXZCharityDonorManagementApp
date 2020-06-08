@@ -36,3 +36,7 @@ C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Pro
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.VolunteersHome.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.About.resources
 C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.Users.resources
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\bin\Debug\Splash.exe.manifest
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\bin\Debug\Splash.application
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.exe.manifest
+C:\Users\User\OneDrive\Personal\Documents\B. NBCC\3. Spring 2020\B. Database Programming\PROG1121JDatabaseProgrammingProject\DMSProject\Splash\obj\Debug\Splash.application

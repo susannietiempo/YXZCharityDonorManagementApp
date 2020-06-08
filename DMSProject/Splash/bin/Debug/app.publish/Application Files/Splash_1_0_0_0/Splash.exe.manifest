@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Splash.exe" version="1.0.0.0" publicKeyToken="5836bc3fbf23657e" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Splash" version="1.0.0.0" publicKeyToken="124B2F497BA19A4D" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Splash.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Splash.exe" size="2009032">
+      <assemblyIdentity name="Splash" version="1.0.0.0" publicKeyToken="124B2F497BA19A4D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>JWd7wjCfjO3tr9CyrEvfy2qe3xaq7S0DtHxUMEnD5RQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Splash.exe.config" size="394">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WzbAp9zVU/4q7X//XXrfxJyZHfZvuZFFjjxIaGwN7Vw=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=PERSONAL\Susannie" issuerKeyHash="51ee9b054825a49d26f8e9f8c5e89b2d632a8dfe" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>qSo1wGzZrIuUzNr3ggoB+b2N1XSX6L/309SEuncWi2E=</DigestValue></Reference></SignedInfo><SignatureValue>Y+d5Ckv1OjzHsR91bxD2JfZhdC2w9eqbMsE+xu9AADWg+bB6gSL/s9Il+QljPHJL+ZWPTduw1H0oieS3YlzKYAhtPIZ6w5XOrIgPhrpV3+LtjXYYGBS/SFIfQoVkXNEQb2MQf6xJp4y1gdTcEHcpfw2XZahzktGODNWTEEaRYdo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tFY3I5JPH0hRVc2y00FB+SpsnE2LtPn0X5OfKn+zjvh8o2o3rdGGULwGLaeqiw73kqSkpxQrI1e/hjgCeecXomlyuaPdG0aAlJCYjRq4QgcYa1eZtxxBj9L55kBm8J82a+43KW0oGvJOQHr1BotYCHuGTe6afSEOvQaGBBfLVN0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="618b1677ba84d4d3f7bfe89774d58dbdf9010a82f7dacc948bacd96cc0352aa9" Description="" Url=""><as:assemblyIdentity name="Splash.exe" version="1.0.0.0" publicKeyToken="5836bc3fbf23657e" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PERSONAL\Susannie</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>RzLJoNGFtTcaEbVittV4jYB6jEfDM2WCWdpFNKiSaY8=</DigestValue></Reference></SignedInfo><SignatureValue>WIXWKD8N1ORRiL77esFk17VeE3g4Z1OTO5mmr03WLIp8bOSYOQyeXl0k9vv9FM9A+X2GYEGlEq+Y2LbXBF4hUBmRy+Y9uC7lAnQmLWc6zz6hnjcMMX9+zBK6qZrAzcPAocITv0Dz2VpU/8UcGpoWak1ktr9Inze21UUW6tycavs=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tFY3I5JPH0hRVc2y00FB+SpsnE2LtPn0X5OfKn+zjvh8o2o3rdGGULwGLaeqiw73kqSkpxQrI1e/hjgCeecXomlyuaPdG0aAlJCYjRq4QgcYa1eZtxxBj9L55kBm8J82a+43KW0oGvJOQHr1BotYCHuGTe6afSEOvQaGBBfLVN0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQcKnG/qXQoaxB0AQPKuvzpjANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQDHiIAUABFAFIAUwBPAE4AQQBMAFwAUwB1AHMAYQBuAG4AaQBlMB4XDTIwMDYwODAyNTI0OFoXDTIxMDYwODA4NTI0OFowLTErMCkGA1UEAx4iAFAARQBSAFMATwBOAEEATABcAFMAdQBzAGEAbgBuAGkAZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAtFY3I5JPH0hRVc2y00FB+SpsnE2LtPn0X5OfKn+zjvh8o2o3rdGGULwGLaeqiw73kqSkpxQrI1e/hjgCeecXomlyuaPdG0aAlJCYjRq4QgcYa1eZtxxBj9L55kBm8J82a+43KW0oGvJOQHr1BotYCHuGTe6afSEOvQaGBBfLVN0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQBZJfISUAe6XssOOroS6xDQlAsDdL124IIl+s+do9aRp81n19hM/unUOxsiPTC2gPa7Hy8nVebfpiStN2LSOpq61rA2046NBLUvxyqT2Qa9G+wtHXpO2n6QpGnV8S/2U9n6DXG1CPPpl0eH8VkROHYeSYKb6no5tw1IWu/u0snSIg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

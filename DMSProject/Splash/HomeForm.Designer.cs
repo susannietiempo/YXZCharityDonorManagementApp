@@ -40,8 +40,6 @@
             this.picReports = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.picBoxHome = new System.Windows.Forms.PictureBox();
-            this.picBoxSearch = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelLogout = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -81,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
@@ -99,8 +96,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.panelIcons);
-            this.panel3.Controls.Add(this.picBoxSearch);
-            this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(-21, -1);
             this.panel3.Name = "panel3";
@@ -243,25 +238,6 @@
             this.picBoxHome.Size = new System.Drawing.Size(37, 38);
             this.picBoxHome.TabIndex = 14;
             this.picBoxHome.TabStop = false;
-            // 
-            // picBoxSearch
-            // 
-            this.picBoxSearch.BackgroundImage = global::Splash.Properties.Resources.source;
-            this.picBoxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxSearch.Location = new System.Drawing.Point(48, 51);
-            this.picBoxSearch.Name = "picBoxSearch";
-            this.picBoxSearch.Size = new System.Drawing.Size(30, 31);
-            this.picBoxSearch.TabIndex = 7;
-            this.picBoxSearch.TabStop = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Roboto Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(86, 59);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(176, 21);
-            this.txtSearch.TabIndex = 6;
-            this.txtSearch.Text = "Quick Search";
             // 
             // panel4
             // 
@@ -631,7 +607,6 @@
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panelIcons.ResumeLayout(false);
             this.panelIcons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxVolunteers)).EndInit();
@@ -639,7 +614,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDonors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -675,8 +649,6 @@
         private System.Windows.Forms.PictureBox picReports;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox picBoxHome;
-        private System.Windows.Forms.PictureBox picBoxSearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label labelLogout;
         private System.Windows.Forms.PictureBox pictureBox2;

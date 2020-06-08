@@ -74,11 +74,12 @@ namespace Splash
                 btnAdd.Visible = false;
                 btnEdit.Visible = false;
                 btnSaveDelete.Text = "Save";
+                btnCancel.Text = "Cancel";
                 btnSaveDelete.BackColor = Color.SeaGreen;
                 txtProgId.Enabled = false;
                 txtProgId.BackColor = Color.LightGray;
 
-                UtilityHelper.ControlState(panelVolProg.Controls, false);
+                UtilityHelper.ControlState(panelVolProg.Controls, true);
                 UtilityHelper.ClearControls(panelVolProg.Controls);
                 UtilityHelper.NavigationState(btnFirst, btnLast, btnPrevious, btnNext, false);
 

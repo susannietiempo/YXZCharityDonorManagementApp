@@ -142,6 +142,11 @@ namespace Splash
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK);
             }
 
+
+            btnSaveDelete.Text = "Delete";
+            btnCancelReset.Text = "Reset";
+            btnSaveDelete.BackColor = Color.IndianRed;
+
             ButtonReset();
 
             myParent.prgBar.Value = 0;
@@ -200,6 +205,7 @@ namespace Splash
                     txtOrgName.Enabled = false;
                     txtOrgName.BackColor = Color.DarkGray;
                     txtTitle.Focus();
+                    myParent.toolStripStatusLabel1.ForeColor = Color.Black;
                     myParent.toolStripStatusLabel1.Text = "Adding constituency";
 
                 }
@@ -220,6 +226,7 @@ namespace Splash
                     txtBirthdate.Enabled = false;
                     txtBirthdate.BackColor = Color.DarkGray;
                     txtOrgName.Focus();
+                    myParent.toolStripStatusLabel1.ForeColor = Color.Black;
                     myParent.toolStripStatusLabel1.Text = "Adding constituency";
                 }
 
@@ -446,8 +453,10 @@ namespace Splash
                 totalDonorCount = Convert.ToInt32(ds.Tables[2].Rows[0]["DonorCount"]);
 
                 myParent.toolStripStatusLabel1.Text = $"Displaying constituent {currentRecord} of {totalDonorCount}";
+                myParent.toolStripStatusLabel1.ForeColor = Color.Black;
                 UtilityHelper.ControlState(panelDonor.Controls, true);
                 txtAccountId.Enabled = false;
+
             }
             else
             {

@@ -42,7 +42,9 @@ namespace Splash
                 lsvRecentGifts.Items.Add(itm);
             }
 
-            myParent.toolStripStatusLabel1.Text = ($"Welcome, {Environment.UserName}");
+            Login login = new Login();
+
+            myParent.toolStripStatusLabel1.Text = ("Welcome....");
         }
 
         private void ShowNewForm(object sender, EventArgs e)

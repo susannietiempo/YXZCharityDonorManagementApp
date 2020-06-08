@@ -57,7 +57,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.txtPhonenumber = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtBirthdate = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -104,6 +103,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBirthdate = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
@@ -468,17 +468,6 @@
             this.label22.Size = new System.Drawing.Size(57, 13);
             this.label22.TabIndex = 30;
             this.label22.Text = "Birth Date";
-            // 
-            // txtBirthdate
-            // 
-            this.txtBirthdate.BackColor = System.Drawing.Color.White;
-            this.txtBirthdate.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthdate.Location = new System.Drawing.Point(810, 210);
-            this.txtBirthdate.Name = "txtBirthdate";
-            this.txtBirthdate.Size = new System.Drawing.Size(204, 22);
-            this.txtBirthdate.TabIndex = 15;
-            this.txtBirthdate.Tag = "Birth Date";
-            this.txtBirthdate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // label16
             // 
@@ -1017,6 +1006,17 @@
             // 
             this.errProvider.ContainerControl = this;
             // 
+            // txtBirthdate
+            // 
+            this.txtBirthdate.BackColor = System.Drawing.Color.White;
+            this.txtBirthdate.Font = new System.Drawing.Font("Roboto Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBirthdate.Location = new System.Drawing.Point(810, 210);
+            this.txtBirthdate.Name = "txtBirthdate";
+            this.txtBirthdate.Size = new System.Drawing.Size(204, 22);
+            this.txtBirthdate.TabIndex = 15;
+            this.txtBirthdate.Tag = "Birth Date";
+            this.txtBirthdate.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
+            // 
             // Donor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1091,7 +1091,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtBirthdate;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label15;
@@ -1126,5 +1125,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtBirthdate;
     }
 }
